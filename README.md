@@ -11,4 +11,6 @@ Checked in codebase to github.
 - 1/20/2019
   - Designed the system architecture for the app.
   - Added a rough login UI.
-
+- 1/21/2019
+  - Added buttons.
+  - Added react navigation dependency.
