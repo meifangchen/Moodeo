@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
-import { Text, StatusBar, TextInput, View, StyleSheet } from 'react-native';
+import { Text, StatusBar, TextInput, View, StyleSheet, Button, Alert} from 'react-native';
 import { Constants } from 'expo';
 
 export default class App extends Component {
+  _onPressButton() {
+    Alert.alert('You tapped the button!')
+  }
+  
   state = {
     name: '',
     email: '',
   };
-  
+
   render() {
     return (
       <View style={styles.container}>
@@ -44,6 +48,21 @@ export default class App extends Component {
           onSubmitEditing={this._submit}
           blurOnSubmit={true}
         />
+        <View style={styles.buttonContainer}>
+          <Button
+            onPress={this._onPressButton}
+            title="Sign Up"
+            color="#336699"
+          />
+        </View>
+
+        <View style={styles.buttonContainer}>
+          <Button
+            onPress={this._onPressButton}
+            title="Sign In"
+            color="#336699"
+          />
+        </View>
       </View>
     );
   }
@@ -81,4 +100,8 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     fontSize: 16,
   },
+  buttonContainer: {
+    margin: 20,
+    backgroundColor: 'white'
+  }
 });
