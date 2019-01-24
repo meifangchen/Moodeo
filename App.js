@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, StatusBar, TextInput, View, StyleSheet, Button, Alert} from 'react-native';
+import { Text, StatusBar, TextInput, View, StyleSheet, Button, Alert, Image} from 'react-native';
 import { Constants } from 'expo';
 import CheckBox from 'react-native-check-box';
 
@@ -22,6 +22,10 @@ export default class App extends Component {
           Hello, welcome to FoodManager!
           </Text>
         </View>
+        <Image
+          style={{width: 50, height: 50}}
+          source={{uri: 'https://facebook.github.io/react-native/docs/assets/favicon.png'}}
+        />
         <TextInput
           style={styles.input}
           value={this.state.name}
