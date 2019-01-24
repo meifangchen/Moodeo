@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Text, StatusBar, TextInput, View, StyleSheet, Button, Alert} from 'react-native';
 import { Constants } from 'expo';
+import CheckBox from 'react-native-check-box';
 
 export default class App extends Component {
   _onPressButton() {
@@ -63,6 +64,16 @@ export default class App extends Component {
             color="#336699"
           />
         </View>
+        <CheckBox
+            style={{flex: 1, padding: 20}}
+            onClick={()=>{
+              this.setState({
+                  isChecked:!this.state.isChecked
+              })
+            }}
+            isChecked={this.state.isChecked}
+            rightText={"I have read and agree to the terms and conditions and the privacy policy."}
+        />
       </View>
     );
   }

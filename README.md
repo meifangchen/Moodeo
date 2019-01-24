@@ -14,3 +14,6 @@ Checked in codebase to github.
 - 1/21/2019
   - Added buttons.
   - Added react navigation dependency.
+- 1/23/2019
+  - Added CheckBox dependency and CheckBox
+  
