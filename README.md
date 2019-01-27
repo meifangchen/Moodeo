@@ -23,5 +23,5 @@ Checked in codebase to github.
   - Worked on react navigation.
 - 1/25/2019
   - Watched Udemy online course of React Native from lecture 1 - 24.
-  
-  
+- 1/26/2019
+  - Watched Udemy online course of React Native from lecture 25 - 35.
