@@ -27,3 +27,5 @@ Checked in codebase to github.
   - Watched Udemy online course of React Native from lecture 25 - 35.
 - 1/27/2019
   - Watched Udemy online course of React Native from lecture 36 - 60.
+- 1/28/2019
+  - Watched Udemy online course of React Native from lecture 61 - 90.
