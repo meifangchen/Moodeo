@@ -35,3 +35,9 @@ Checked in codebase to github.
   - Watched Udemy online course of React Native from lecture 111 - 150.
 - 1/31/2019
   - Watched Udemy online course of React Native from lecture 151 - 170.
+- 2/1/2019
+  - Watched Udemy online course of React Native from lecture 171 - 180.
+- 2/2/2019
+  - Watched Udemy online course of React Native from lecture 181 - 203. Completed the online course and received the certificate.
+- 2/3/2019
+  - Set up Firebase database.
