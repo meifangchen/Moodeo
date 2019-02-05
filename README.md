@@ -41,3 +41,5 @@ Checked in codebase to github.
   - Watched Udemy online course of React Native from lecture 181 - 203. Completed the online course and received the certificate.
 - 2/3/2019
   - Set up Firebase database.
+- 2/4/2019
+  - Fix npm start bug due to npm version by downgrading npm version to 4.
