@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Text, StatusBar, TextInput, View, StyleSheet, Button, Alert, Image} from 'react-native';
 import { Constants } from 'expo';
 import CheckBox from 'react-native-check-box';
+import ListItem from "./src/components/ListItem/ListItem";
 
 export default class App extends Component {
   _onPressButton() {
@@ -22,6 +23,7 @@ export default class App extends Component {
           Hello, welcome to FoodManager!
           </Text>
         </View>
+        <ListItem></ListItem>
         <Image
           style={{width: 50, height: 50}}
           source={{uri: 'https://facebook.github.io/react-native/docs/assets/favicon.png'}}
