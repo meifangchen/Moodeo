@@ -2,9 +2,9 @@ import React from "react";
 import  {View, Text, StyleSheet} from "react-native";
 
 //declare a function component
-const ListItem = () => (
-    <View style={styles.ListItem}>
-        <Text>This is a test for customized component</Text>
+const ListItem = (props) => (
+    <View style={styles.listItem}>
+        <Text>{props.shoppingItemName}</Text>
     </View>
     
 );

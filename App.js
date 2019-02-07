@@ -12,9 +12,32 @@ export default class App extends Component {
   state = {
     name: '',
     email: '',
+    shoppingItemName: "",
+    shoppingItems: []
+  };
+
+  shoppingItemNameChangedHandler = val => {
+    this.setState({
+      shoppingItemName: val
+    });
+  };
+
+  shoppingItemsubmitHandler = () => {
+    if (this.state.shoppingItemName.trim() === "") {
+      return;
+    }
+
+    this.setState(prevState => {
+      return {
+        shoppingItems: prevState.shoppingItems.concat(prevState.shoppingItemName)
+      };
+    });
   };
 
   render() {
+    const shoppingItemsOutput = this.state.shoppingItems.map((shoppingItem, i) => (
+      <ListItem key={i} shoppingItemName={shoppingItem} />
+    ));
     return (
       <View style={styles.container}>
         <StatusBar barStyle="light-content" />
@@ -23,7 +46,21 @@ export default class App extends Component {
           Hello, welcome to FoodManager!
           </Text>
         </View>
-        <ListItem></ListItem>
+      
+        <View style={styles.inputContainer}>
+          <TextInput
+            placeholder="food item"
+            value={this.state.shoppingItemName}
+            onChangeText={this.shoppingItemNameChangedHandler}
+            style={styles.shoppingItemInput}
+          />
+          <Button
+            title="Add"
+            style={styles.shoppingItemButton}
+            onPress={this.shoppingItemsubmitHandler}
+          />
+        </View>
+        <View style={styles.listContainer}>{shoppingItemsOutput}</View>
         <Image
           style={{width: 50, height: 50}}
           source={{uri: 'https://facebook.github.io/react-native/docs/assets/favicon.png'}}
@@ -120,5 +157,30 @@ const styles = StyleSheet.create({
   buttonContainer: {
     margin: 20,
     backgroundColor: 'white'
+  },
+  inputContainer: {
+    // flex: 1,
+    width: "100%",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center"
+  },
+  shoppingItemInput: {
+    margin: 20,
+    width: "70%",
+    marginBottom: 0,
+    height: 34,
+    paddingHorizontal: 10,
+    borderRadius: 4,
+    borderColor: '#ccc',
+    borderWidth: 1,
+    fontSize: 16,
+  },
+  shoppingItemButton: {
+    width: "30%"
+  },
+  listContainer: {
+    width: "80%",
+    margin: 20
   }
 });
