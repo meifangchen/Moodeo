@@ -43,3 +43,7 @@ Checked in codebase to github.
   - Set up Firebase database.
 - 2/4/2019
   - Fix npm start bug due to npm version by downgrading npm version to 4.
+- 2/6/2019
+  - Added a customized ListItem component and a rough shopping item feature.
+- 2/7/2019
+  - Fixed npm start error. 
