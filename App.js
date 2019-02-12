@@ -1,133 +1,62 @@
-import React, { Component } from 'react';
-import { Text, StatusBar, TextInput, View, StyleSheet, Button, Alert, Image} from 'react-native';
-import { Constants } from 'expo';
-import CheckBox from 'react-native-check-box';
-import ShoppingItemInput from "./src/components/ShoppingItemInput/ShoppingItemInput";
-import ShoppingItemList from "./src/components/ShoppingItemList/ShoppingItemList";
+import React from 'react';
+import { Platform, StatusBar, StyleSheet, View } from 'react-native';
+import { AppLoading, Asset, Font, Icon } from 'expo';
+import AppNavigator from './navigation/AppNavigator';
 
-export default class App extends Component {
-  _onPressButton() {
-    Alert.alert('You tapped the button!')                                                 
-  }
-  
+export default class App extends React.Component {
   state = {
-    name: '',
-    email: '',
-    shoppingItems: []
+    isLoadingComplete: false,
   };
-  shoppingItemAddedHandler = shoppingItemName => {
-    this.setState(prevState => {
-      return {
-        shoppingItems: prevState.shoppingItems.concat(shoppingItemName)
-      };
-    });
-  };
-  render() {
-    return (
-      <View style={styles.container}>
-        <StatusBar barStyle="light-content" />
-        <View style={styles.header}>
-          <Text style={styles.description}>
-          Hello, welcome to FoodManager!
-          </Text>
-        </View>
-        <ShoppingItemInput onshoppingItemAdded={this.shoppingItemAddedHandler} />
-        <ShoppingItemList shoppingItems={this.state.shoppingItems} />
-        <Image
-          style={{width: 50, height: 50}}
-          source={{uri: 'https://facebook.github.io/react-native/docs/assets/favicon.png'}}
-        />
-        <TextInput
-          style={styles.input}
-          value={this.state.name}
-          onChangeText={name => this.setState({name})}
-          ref={ref => {this._nameInput = ref}}
-          placeholder="Full Name"
-          autoFocus={true}
-          autoCapitalize="words"
-          autoCorrect={true}
-          keyboardType="default"
-          returnKeyType="next"
-          onSubmitEditing={this._next}
-          blurOnSubmit={false}
-        />
-        <TextInput
-          style={styles.input}
-          value={this.state.email}
-          onChangeText={email => this.setState({email})}
-          ref={ref => {this._emailInput = ref}}
-          placeholder="email@example.com"
-          autoCapitalize="none"
-          autoCorrect={false}
-          keyboardType="email-address"
-          returnKeyType="send"
-          onSubmitEditing={this._submit}
-          blurOnSubmit={true}
-        />
-        <View style={styles.buttonContainer}>
-          <Button
-            onPress={this._onPressButton}
-            title="Sign Up"
-            color="#336699"
-          />
-        </View>
 
-        <View style={styles.buttonContainer}>
-          <Button
-            onPress={this._onPressButton}
-            title="Sign In"
-            color="#336699"
-          />
-        </View>
-        <CheckBox
-            style={{flex: 1, padding: 20}}
-            onClick={()=>{
-              this.setState({
-                  isChecked:!this.state.isChecked
-              })
-            }}
-            isChecked={this.state.isChecked}
-            rightText={"I have read and agree to the terms and conditions and the privacy policy."}
+  render() {
+    if (!this.state.isLoadingComplete && !this.props.skipLoadingScreen) {
+      return (
+        <AppLoading
+          startAsync={this._loadResourcesAsync}
+          onError={this._handleLoadingError}
+          onFinish={this._handleFinishLoading}
         />
-      </View>
-    );
+      );
+    } else {
+      return (
+        <View style={styles.container}>
+          {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
+          <AppNavigator />
+        </View>
+      );
+    }
   }
-  
-  _next = () => {
-    this._emailInput && this._emailInput.focus();
+
+  _loadResourcesAsync = async () => {
+    return Promise.all([
+      Asset.loadAsync([
+        require('./assets/images/welcomePic.png'),
+        require('./assets/images/welcomePic.png'),
+      ]),
+      Font.loadAsync({
+        // This is the font that we are using for our tab bar
+        ...Icon.Ionicons.font,
+        // We include SpaceMono because we use it in HomeScreen.js. Feel free
+        // to remove this if you are not using it in your app
+        'space-mono': require('./assets/fonts/SpaceMono-Regular.ttf'),
+      }),
+    ]);
   };
-  
-  _submit = () => {
-    alert(`Welcome, ${this.state.name}! Confirmation email has been sent to ${this.state.email}`);
+
+  _handleLoadingError = error => {
+    // In this case, you might want to report the error to your error
+    // reporting service, for example Sentry
+    console.warn(error);
+  };
+
+  _handleFinishLoading = () => {
+    this.setState({ isLoadingComplete: true });
   };
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ecf0f1',
+    backgroundColor: '#fff',
   },
-  header: {
-    paddingTop: 20 + Constants.statusBarHeight,
-    padding: 20,
-    backgroundColor: '#336699',
-  },
-  description: {
-    fontSize: 14,
-    color: 'white',
-  },
-  input: {
-    margin: 20,
-    marginBottom: 0,
-    height: 34,
-    paddingHorizontal: 10,
-    borderRadius: 4,
-    borderColor: '#ccc',
-    borderWidth: 1,
-    fontSize: 16,
-  },
-  buttonContainer: {
-    margin: 20,
-    backgroundColor: 'white'
-  }
 });
