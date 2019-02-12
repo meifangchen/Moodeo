@@ -47,3 +47,13 @@ Checked in codebase to github.
   - Added a customized ListItem component and a rough shopping item feature.
 - 2/7/2019
   - Fixed npm start error. 
+- 2/8/2019
+  - Working on screen navigation.
+- 2/9/2019
+  - Keep on working screen navigation.
+- 2/10/2019
+  - Organized code by spliting code into different components.
+- 2/11/2019
+  - Fixed bugs and working on screen navigation.
+- 2/12/2019
+  - Completed navigation and work well.
