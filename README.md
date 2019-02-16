@@ -57,3 +57,9 @@ Checked in codebase to github.
   - Fixed bugs and working on screen navigation.
 - 2/12/2019
   - Completed navigation and work well.
+- 2/13/2019
+  - Worked on connecting firebase.
+- 2/14/2019
+  - Figured out how to connect to firebase.
+- 2/15/2019
+  - Figured out Access Denied Error.
