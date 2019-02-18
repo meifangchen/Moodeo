@@ -45,7 +45,7 @@ const ShoppingListStack = createStackNavigator({
 });
 
 ShoppingListStack.navigationOptions = {
-  tabBarLabel: 'ShoppingList',
+  tabBarLabel: 'Shopping List',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
