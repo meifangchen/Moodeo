@@ -63,3 +63,9 @@ Checked in codebase to github.
   - Figured out how to connect to firebase.
 - 2/15/2019
   - Figured out Access Denied Error.
+- 2/20/2019
+  - Worked on rounting of Shooping List.
+- 2/21/2019
+  - Worked on rounting of Shooping List.
+- 2/22/2019
+  - Figuring out rounting of Shooping List.
