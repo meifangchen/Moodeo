@@ -7,6 +7,10 @@ import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import ShoppingListScreen from '../screens/ShoppingListScreen';
+import BoardScreen from '../screens/BoardScreen';
+import BoardDetailScreen from '../screens/BoardDetailScreen';
+import AddBoardScreen from '../screens/AddBoardScreen';
+import EditBoardScreen from '../screens/EditBoardScreen';
 
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
@@ -42,7 +46,25 @@ LinksStack.navigationOptions = {
 
 const ShoppingListStack = createStackNavigator({
   ShoppingList: ShoppingListScreen,
-});
+  Board: BoardScreen,
+  BoardDetails: BoardDetailScreen,
+  AddBoard: AddBoardScreen,
+  EditBoard: EditBoardScreen,
+},
+{
+  initialRouteName: 'Board',
+  navigationOptions: {
+    headerStyle: {
+      backgroundColor: '#777777',
+    },
+    headerTintColor: '#fff',
+    headerTitleStyle: {
+      fontWeight: 'bold',
+    },
+    headerBackTitle: null,
+  },
+},
+);
 
 ShoppingListStack.navigationOptions = {
   tabBarLabel: 'Shopping List',
