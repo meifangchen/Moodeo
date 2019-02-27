@@ -10,6 +10,7 @@ import BoardScreen from '../screens/BoardScreen';
 import BoardDetailScreen from '../screens/BoardDetailScreen';
 import AddBoardScreen from '../screens/AddBoardScreen';
 import EditBoardScreen from '../screens/EditBoardScreen';
+import SettingsScreen from '../screens/SettingsScreen';
 
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
@@ -76,6 +77,7 @@ ShoppingListStack.navigationOptions = {
 
 const ProfileStack = createStackNavigator({
   Profile: ProfileScreen,
+  Settings: SettingsScreen,
 });
 
 ProfileStack.navigationOptions = {

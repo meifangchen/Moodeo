@@ -3,18 +3,11 @@ import { ScrollView, StyleSheet} from 'react-native';
 import { List, ListItem, Button, Icon } from 'react-native-elements';
 import firebase from '../Firebase';
 
-export default class ProfileScreen extends React.Component {
+class SettingsScreen extends React.Component {
 
   static navigationOptions = ({ navigation }) => {
     return {
-      title: 'Profile',
-      headerRight: (
-        <Button
-          buttonStyle={{ padding: 0, backgroundColor: 'transparent' }}
-          icon={{ name: 'settings', style: { color: 'black', marginRight: 0, fontSize: 28 } }}
-          onPress={() => { navigation.push('Settings') }}
-        />
-      ),
+      title: 'Settings',
     };
   };
 
@@ -34,3 +27,4 @@ const styles = StyleSheet.create({
   },
 });
 
+export default SettingsScreen;
