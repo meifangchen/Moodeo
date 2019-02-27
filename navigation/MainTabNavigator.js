@@ -6,7 +6,6 @@ import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
 import ProfileScreen from '../screens/ProfileScreen';
-import ShoppingListScreen from '../screens/ShoppingListScreen';
 import BoardScreen from '../screens/BoardScreen';
 import BoardDetailScreen from '../screens/BoardDetailScreen';
 import AddBoardScreen from '../screens/AddBoardScreen';
@@ -45,7 +44,6 @@ LinksStack.navigationOptions = {
 };
 
 const ShoppingListStack = createStackNavigator({
-  ShoppingList: ShoppingListScreen,
   Board: BoardScreen,
   BoardDetails: BoardDetailScreen,
   AddBoard: AddBoardScreen,

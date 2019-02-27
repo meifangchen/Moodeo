@@ -10,7 +10,7 @@ class BoardScreen extends Component {
       headerRight: (
         <Button
           buttonStyle={{ padding: 0, backgroundColor: 'transparent' }}
-          icon={{ name: 'add-circle', style: { marginRight: 0, fontSize: 28 } }}
+          icon={{ name: 'add-circle', style: { color: 'black', marginRight: 0, fontSize: 28 } }}
           onPress={() => { navigation.push('AddBoard') }}
         />
       ),
@@ -61,7 +61,7 @@ class BoardScreen extends Component {
               <ListItem
                 key={i}
                 title={item.title}
-                leftIcon={{name: 'book', type: 'font-awesome'}}
+                leftIcon={{name: 'tag', type: 'font-awesome', color:'black'}}
                 onPress={() => {
                   this.props.navigation.navigate('BoardDetails', {
                     boardkey: `${JSON.stringify(item.key)}`,
