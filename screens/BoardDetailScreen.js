@@ -5,7 +5,7 @@ import firebase from '../Firebase';
 
 class BoardDetailScreen extends Component {
   static navigationOptions = {
-    title: 'Board Details',
+    title: 'Shopping Item Details',
   };
   constructor() {
     super();
@@ -64,10 +64,10 @@ class BoardDetailScreen extends Component {
               <Text h3>{this.state.board.title}</Text>
             </View>
             <View>
-              <Text h5>{this.state.board.description}</Text>
+              <Text h3>{this.state.board.description}</Text>
             </View>
             <View>
-              <Text h4>{this.state.board.author}</Text>
+              <Text h3>{this.state.board.author}</Text>
             </View>
           </View>
           <View style={styles.detailButton}>

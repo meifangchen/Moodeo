@@ -82,7 +82,7 @@ class EditBoardScreen extends Component {
       <ScrollView style={styles.container}>
         <View style={styles.subContainer}>
           <TextInput
-              placeholder={'Title'}
+              placeholder={'Food Item Name'}
               value={this.state.title}
               onChangeText={(text) => this.updateTextInput(text, 'title')}
           />
@@ -91,14 +91,14 @@ class EditBoardScreen extends Component {
           <TextInput
               multiline={true}
               numberOfLines={4}
-              placeholder={'Description'}
+              placeholder={'Quantity'}
               value={this.state.description}
               onChangeText={(text) => this.updateTextInput(text, 'description')}
           />
         </View>
         <View style={styles.subContainer}>
           <TextInput
-              placeholder={'Author'}
+              placeholder={'Notes'}
               value={this.state.author}
               onChangeText={(text) => this.updateTextInput(text, 'author')}
           />
