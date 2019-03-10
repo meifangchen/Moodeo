@@ -64,8 +64,18 @@ Checked in codebase to github.
 - 2/15/2019
   - Figured out Access Denied Error.
 - 2/20/2019
-  - Worked on rounting of Shooping List.
+  - Worked on routing of Shooping List.
 - 2/21/2019
-  - Worked on rounting of Shooping List.
+  - Worked on routing of Shooping List.
 - 2/22/2019
-  - Figuring out rounting of Shooping List.
+  - Figured out routing of Shooping List.
+- 2/25/2019
+  - Draft UIs.
+- 3/07/2019
+  - Worked on firebase email authentication.
+- 3/08/2019
+  - Added auth navigator.
+- 3/09/2019
+  - Added login/logout for firebase email authentication.
+- 3/10/2019
+  - Working on register for firebase email authentication.
