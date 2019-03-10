@@ -21,7 +21,7 @@ class SignInScreen extends React.Component {
       this.setState({
         authenticating: true,
       });
-  
+    
       const { email, password } = this.state;
   
       firebase.auth().signInWithEmailAndPassword(email, password)
@@ -45,7 +45,7 @@ class SignInScreen extends React.Component {
             }))
         })
     }
-  
+
     onPressLogOut() {
       firebase.auth().signOut()
         .then(() => {
@@ -94,6 +94,7 @@ class SignInScreen extends React.Component {
             value={this.state.password}
           />
           <AuthButton onPress={() => this.onPressSignIn()}>Log In</AuthButton>
+          <AuthButton onPress={() => { this.props.navigation.navigate('SignUp') }}>Sign Up</AuthButton>
           <Text>{this.state.error}</Text>
         </View>
       )

@@ -2,9 +2,11 @@ import React from 'react';
 import { Platform } from 'react-native';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 import SignInScreen from '../screens/SignInScreen';
+import SignUpScreen from '../screens/SignUpScreen';
 
 const AuthStack = createStackNavigator({ 
-  SignIn: SignInScreen 
+  SignIn: SignInScreen,
+  SignUp: SignUpScreen
 });
 
 
