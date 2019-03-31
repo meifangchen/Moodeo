@@ -11,11 +11,34 @@ import {
 import { WebBrowser } from 'expo';
 
 import { MonoText } from '../components/StyledText';
+import {AuthButton} from '../components/AuthButton';
 
 export default class HomeScreen extends React.Component {
+  state = {
+    item: ''
+  }
   static navigationOptions = {
     header: null,
   };
+
+  onPressGenerateItem() { 
+   
+    const parseData = [{foodName:"apple", diabetesFriendly:"hi"},
+    {foodName:"peach", diabetesFriendly:"world"}];
+    
+    result2 = "";
+
+    parseData.forEach(function(foodItem){
+     if(foodItem.foodName == "peach") {
+        result2 = foodItem.diabetesFriendly;
+    }
+  });
+
+    this.setState({
+      item: result2
+    });
+
+   };
 
   render() {
     return (
@@ -40,10 +63,11 @@ export default class HomeScreen extends React.Component {
             <View style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
               <MonoText style={styles.codeHighlightText}>screens/HomeScreen.js</MonoText>
             </View>
-
-            <Text style={styles.getStartedText}>
-              Change this text and your app will automatically reload.
-            </Text>
+          
+          <Text style={styles.getStartedText}>
+          {this.state.item}
+          </Text>
+          <AuthButton onPress={() => this.onPressGenerateItem()}>Recommend me</AuthButton>
           </View>
 
           <View style={styles.helpContainer}>
