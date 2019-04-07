@@ -79,5 +79,7 @@ Checked in codebase to github.
   - Added login/logout for firebase email authentication.
 - 3/10/2019
   - Working on register for firebase email authentication.
-- 4/4/2019 
+- 4/04/2019 
   - Implemented UI features for ProfileScreen.
+- 4/06/2019
+  - Added checkbox to ProfileScreen.
