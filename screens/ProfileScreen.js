@@ -1,6 +1,6 @@
 import React from 'react';
 import { ActivityIndicator, StyleSheet, ScrollView, View, Text } from 'react-native';
-import { List, ListItem, Button, Icon } from 'react-native-elements';
+import { List, ListItem, CheckBox,Button, Icon } from 'react-native-elements';
 import firebase from '../Firebase';
 import { AuthInput } from '../components/AuthInput';
 import { AuthButton } from '../components/AuthButton';
@@ -22,39 +22,84 @@ export default class ProfileScreen extends React.Component {
 
   state = {
     gender: '',
-    height: 0,
-    weight: 0,
-    age: 0,
+    height: '',
+    weight: '',
+    age: '',
+    femaleChecked: true,
+    maleChecked: false,
+    yesChecked: true,
+    noChecked: false
   }
 
   onPressSave() {  
     const { gender, height, weight, age } = this.state;
     alert("Your edited profile has been saved!");
   }
+  onFCheckChange() {
+      this.setState({
+        maleChecked: false,
+        femaleChecked: !this.state.femaleChecked,
+      });
+    } 
 
+  onMCheckChange() {
+      this.setState({
+        femaleChecked: false,
+        maleChecked: !this.state.maleChecked,
+      });
+  }
+  onYesCheckChange() {
+    this.setState({
+      noChecked: false,
+      yesChecked: !this.state.yesChecked,
+    });
+  }
+
+  onNoCheckChange() {
+    this.setState({
+      yesChecked: false,
+      noChecked: !this.state.noChecked,
+    });
+}
   onPressCancel() {
     this.setState({
       gender: '',
-      height: 0,
-      weight: 0,
-      age: 0,
-      message: ''
+      height: '',
+      weight: '',
+      age: '',
+      message: '',
+      maleChecked: false,
+      femaleChecked: false,
+      yesChecked:false,
+      noChecked:false
     });
   }
 
   renderCurrentState() {
     return (
       <View style={styles.container}>
-        <AuthInput
-          placeholder=''
-          label='Gender:(F or M)'
-          onChangeText={gender => this.setState({ gender })}
-          value={this.state.gender}
-        />
+        <Text style={styles.labelText}>Gender</Text>
+        <View style={styles.checkBox}>
+          <CheckBox 
+            title='Female'
+            checkedColor='#00aeef'
+            checkedIcon='dot-circle-o'
+            uncheckedIcon='circle-o'
+            onPress= {() => this.onFCheckChange()}
+            checked={this.state.femaleChecked}
+          />
+          <CheckBox 
+            title='Male'
+            checkedColor='#00aeef'
+            checkedIcon='dot-circle-o'
+            uncheckedIcon='circle-o'
+            onPress= {() => this.onMCheckChange()}
+            checked={this.state.maleChecked}
+          />
+        </View>
         <AuthInput
           placeholder=''
           label='Height(In inches)'
-          secureTextEntry
           onChangeText={height => this.setState({ height })}
           value={this.state.height}
         />
@@ -67,10 +112,29 @@ export default class ProfileScreen extends React.Component {
         <AuthInput
           placeholder=''
           label='Age(In years)'
-          secureTextEntry
           onChangeText={age => this.setState({ age })}
           value={this.state.age}
         />
+        <Text style={styles.labelText}>Do you have diabetes?</Text>
+        <View style={styles.checkBox}>
+          <CheckBox 
+            title='Yes'
+            checkedColor='#00aeef'
+            checkedIcon='dot-circle-o'
+            uncheckedIcon='circle-o'
+            onPress= {() => this.onYesCheckChange()}
+            checked={this.state.yesChecked}
+            fontSize='20'
+          />
+          <CheckBox 
+            title='No'
+            checkedColor='#00aeef'
+            checkedIcon='dot-circle-o'
+            uncheckedIcon='circle-o'
+            onPress= {() => this.onNoCheckChange()}
+            checked={this.state.noChecked}
+          />
+        </View>
         <AuthButton onPress={() => this.onPressSave()}>Save</AuthButton>
         <AuthButton onPress={() => this.onPressCancel()}>Cancel</AuthButton>
       </View>
@@ -97,5 +161,20 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     flexDirection: 'column'
   },
+
+  checkBox: {
+    flex: 1,
+    fontSize: 16,
+    backgroundColor: '#fff',
+    flexDirection: 'row',
+    justifyContent:'space-between',
+  },
+
+  labelText: {
+    paddingTop: 20,
+    paddingBottom: 10,
+    fontSize: 18,
+    fontWeight: 'bold',
+  }
 });
 
