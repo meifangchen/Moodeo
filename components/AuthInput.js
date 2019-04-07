@@ -26,9 +26,10 @@ const styles = StyleSheet.create({
   },
   label: {
     padding: 5,
-    paddingBottom: 0,
+    paddingTop: 10,
+    paddingBottom: 10,
     color: '#333',
-    fontSize: 17,
+    fontSize: 20,
     fontWeight: '700',
     width: '100%',
   },
@@ -36,8 +37,9 @@ const styles = StyleSheet.create({
     paddingRight: 5,
     paddingLeft: 5,
     paddingBottom: 2,
+    paddingBottom: 10,
     color: '#333',
-    fontSize: 18,
+    fontSize: 20,
     width: '100%',
   }
 });

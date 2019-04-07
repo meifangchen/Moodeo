@@ -28,7 +28,11 @@ export default class ProfileScreen extends React.Component {
     femaleChecked: true,
     maleChecked: false,
     yesChecked: true,
-    noChecked: false
+    noChecked: false,
+    vegetableChecked: false,
+    wholeGrainChecked: false,
+    peanutChecked: false,
+    eggsChecked: false
   }
 
   onPressSave() {  
@@ -61,6 +65,30 @@ export default class ProfileScreen extends React.Component {
       noChecked: !this.state.noChecked,
     });
 }
+
+onVegetableCheckChange() {
+  this.setState({
+    vegetableChecked: !this.state.vegetableChecked,
+  });
+}
+
+onWholeGrainCheckChange() {
+  this.setState({
+    wholeGrainChecked: !this.state.wholeGrainChecked,
+  });
+}
+
+onPeanutCheckChange() {
+  this.setState({
+    peanutChecked: !this.state.peanutChecked,
+  });
+}
+
+onEggCheckChange() {
+  this.setState({
+    eggsChecked: !this.state.eggsChecked,
+  });
+}
   onPressCancel() {
     this.setState({
       gender: '',
@@ -71,7 +99,11 @@ export default class ProfileScreen extends React.Component {
       maleChecked: false,
       femaleChecked: false,
       yesChecked:false,
-      noChecked:false
+      noChecked:false,
+      vegetableChecked: false,
+      wholeGrainChecked: false,
+      peanutChecked: false,
+      eggsChecked: false
     });
   }
 
@@ -79,7 +111,6 @@ export default class ProfileScreen extends React.Component {
     return (
       <View style={styles.container}>
         <Text style={styles.labelText}>Gender</Text>
-        <View style={styles.checkBox}>
           <CheckBox 
             title='Female'
             checkedColor='#00aeef'
@@ -96,10 +127,10 @@ export default class ProfileScreen extends React.Component {
             onPress= {() => this.onMCheckChange()}
             checked={this.state.maleChecked}
           />
-        </View>
+        
         <AuthInput
           placeholder=''
-          label='Height(In inches)'
+          label='Height:(In inches)'
           onChangeText={height => this.setState({ height })}
           value={this.state.height}
         />
@@ -111,12 +142,11 @@ export default class ProfileScreen extends React.Component {
         />
         <AuthInput
           placeholder=''
-          label='Age(In years)'
+          label='Age:(In years)'
           onChangeText={age => this.setState({ age })}
           value={this.state.age}
         />
         <Text style={styles.labelText}>Do you have diabetes?</Text>
-        <View style={styles.checkBox}>
           <CheckBox 
             title='Yes'
             checkedColor='#00aeef'
@@ -134,7 +164,42 @@ export default class ProfileScreen extends React.Component {
             onPress= {() => this.onNoCheckChange()}
             checked={this.state.noChecked}
           />
-        </View>
+        <Text style={styles.labelText}>Food preferences</Text>
+          <CheckBox 
+            title='Vegetable'
+            checkedColor='#00aeef'
+            //checkedIcon='dot-circle-o'
+            //uncheckedIcon='circle-o'
+            onPress= {() => this.onVegetableCheckChange()}
+            checked={this.state.vegetableChecked}
+            fontSize='20'
+          />
+          <CheckBox 
+            title='Whole grain'
+            checkedColor='#00aeef'
+            //checkedIcon='dot-circle-o'
+            //uncheckedIcon='circle-o'
+            onPress= {() => this.onWholeGrainCheckChange()}
+            checked={this.state.wholeGrainChecked}
+          />
+        <Text style={styles.labelText}>Food allergies</Text>
+          <CheckBox 
+            title='Egg'
+            checkedColor='#00aeef'
+            //checkedIcon='dot-circle-o'
+            //uncheckedIcon='circle-o'
+            onPress= {() => this.onEggCheckChange()}
+            checked={this.state.eggsChecked}
+            fontSize='20'
+          />
+          <CheckBox 
+            title='Peanut'
+            checkedColor='#00aeef'
+            //checkedIcon='dot-circle-o'
+            //uncheckedIcon='circle-o'
+            onPress= {() => this.onPeanutCheckChange()}
+            checked={this.state.peanutChecked}
+          />
         <AuthButton onPress={() => this.onPressSave()}>Save</AuthButton>
         <AuthButton onPress={() => this.onPressCancel()}>Cancel</AuthButton>
       </View>
@@ -166,14 +231,15 @@ const styles = StyleSheet.create({
     flex: 1,
     fontSize: 16,
     backgroundColor: '#fff',
-    flexDirection: 'row',
+    paddingBottom: 10,
+    flexDirection: 'column',
     justifyContent:'space-between',
   },
 
   labelText: {
     paddingTop: 20,
     paddingBottom: 10,
-    fontSize: 18,
+    fontSize: 20,
     fontWeight: 'bold',
   }
 });
