@@ -5,29 +5,34 @@ import {
   ScrollView,
   StyleSheet,
   Text,
-  TouchableOpacity,
   View,
+  Picker,
+  Button
 } from 'react-native';
 
-import {SearchBar} from 'react-native-elements'
 import { WebBrowser } from 'expo';
-
 import { MonoText } from '../components/StyledText';
 import {AuthButton} from '../components/AuthButton';
 
 export default class HomeScreen extends React.Component {
   state = {
     item: '',
-    search:'',
+    foodCategory:'',
   }
-  static navigationOptions = {
-    header: null,
-  };
 
-  updateSearch = search => {
-    this.setState({ search });
+  static navigationOptions = ({ navigation }) => {
+    return {
+      title: 'Welcome to FoodManager',
+    };
   };
-
+  clickMe = () => {
+    const data = this.state.foodCategory;
+    if(data == '') {
+      alert("Please pick one");
+    } else {
+      alert(data);
+    }
+  }
   onPressGenerateItem() { 
    
     const parseData = [{foodName:"apple", diabetesFriendly:"hi"},
@@ -48,10 +53,9 @@ export default class HomeScreen extends React.Component {
    };
 
   render() {
-    const { search } = this.state;
     return (
       <View style={styles.container}>
-        <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
+        <View style={styles.container} >
           <View style={styles.welcomeContainer}>
             <Image
               source={
@@ -62,99 +66,64 @@ export default class HomeScreen extends React.Component {
               style={styles.welcomeImage}
             />
           </View>
-
-          <View style={styles.getStartedContainer}>
-            
-
-          <Text style={styles.getStartedText}>Get started by opening</Text>
-          <SearchBar
-            placeholder="Type Here..."
-            onChangeText={this.updateSearch}
-            value={search}
-          />
-
-          <AuthButton onPress={() => this.onPressGenerateItem()}>Recommend me food items</AuthButton>
+        </View>
+        
+        <View style={styles.tabBarInfoContainer}>
+        <Text style={styles.tabBarInfoText}>Food type you are looking for</Text>
+          <Picker
+            selectedValue={this.state.foodCategory}
+            style={{height: 200, width: '100%'}}
+            onValueChange={(itemValue, itemIndex) =>
+              this.setState({foodCategory: itemValue})
+            }>
+            <Picker.Item 
+            label="Please select an option" 
+            value=""
+            style={{color: 'red'}}
+            />
+            <Picker.Item label="All" value="all"/>
+            <Picker.Item label="Dairy product" value="dairyProduct"/>
+            <Picker.Item label="Meat" value="meat"/>
+            <Picker.Item label="Vegetable" value="vegetable"/>
+            <Picker.Item label="Whole grain" value="wholeGrain"/>
+          </Picker>
+          
+        </View>
+        <Button 
+            onPress={this.clickMe}
+            title='Confirm'>
+          </Button>
+          <AuthButton 
+            onPress={() => this.onPressGenerateItem()}>Recommend Me
+          </AuthButton>
           <Text style={styles.getStartedText}>
           {this.state.item}
           </Text>
-
-          </View>
-
-          <View style={styles.helpContainer}>
-            <TouchableOpacity onPress={this._handleHelpPress} style={styles.helpLink}>
-              <Text style={styles.helpLinkText}>Help, it didn’t automatically reload!</Text>
-            </TouchableOpacity>
-          </View>
-        </ScrollView>
-
-        <View style={styles.tabBarInfoContainer}>
-          <Text style={styles.tabBarInfoText}>This is a tab bar. You can edit it in:</Text>
-
-          <View style={[styles.codeHighlightContainer, styles.navigationFilename]}>
-            <MonoText style={styles.codeHighlightText}>navigation/MainTabNavigator.js</MonoText>
-          </View>
-        </View>
+          
       </View>
     );
   }
-
-  _maybeRenderDevelopmentModeWarning() {
-    if (__DEV__) {
-      const learnMoreButton = (
-        <Text onPress={this._handleLearnMorePress} style={styles.helpLinkText}>
-          Learn more
-        </Text>
-      );
-
-      return (
-        <Text style={styles.developmentModeText}>
-          Development mode is enabled, your app will be slower but you can use useful development
-          tools. {learnMoreButton}
-        </Text>
-      );
-    } else {
-      return (
-        <Text style={styles.developmentModeText}>
-          You are not in development mode, your app will run at full speed.
-        </Text>
-      );
-    }
-  }
-
-  _handleLearnMorePress = () => {
-    WebBrowser.openBrowserAsync('https://docs.expo.io/versions/latest/guides/development-mode');
-  };
-
-  _handleHelpPress = () => {
-    WebBrowser.openBrowserAsync(
-      'https://docs.expo.io/versions/latest/guides/up-and-running.html#can-t-see-your-changes'
-    );
-  };
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-  },
-  developmentModeText: {
-    marginBottom: 20,
-    color: 'rgba(0,0,0,0.4)',
-    fontSize: 14,
-    lineHeight: 19,
-    textAlign: 'center',
-  },
-  contentContainer: {
-    paddingTop: 30,
+    padding: 0,
+    paddingLeft: 20,
+    paddingRight: 20,
+    paddingBottom: 40
   },
   welcomeContainer: {
     alignItems: 'center',
-    marginTop: 10,
-    marginBottom: 20,
+    marginTop: 0,
+    marginBottom: 0,
   },
   welcomeImage: {
-    width: 100,
+    width: '80%',
     height: 80,
+    top: 5,
+    paddingTop: 0,
     resizeMode: 'contain',
     marginTop: 3,
     marginLeft: -10,
@@ -166,28 +135,22 @@ const styles = StyleSheet.create({
   homeScreenFilename: {
     marginVertical: 7,
   },
-  codeHighlightText: {
-    color: 'rgba(96,100,109, 0.8)',
-  },
-  codeHighlightContainer: {
-    backgroundColor: 'rgba(0,0,0,0.05)',
-    borderRadius: 3,
-    paddingHorizontal: 4,
-  },
   getStartedText: {
-    fontSize: 17,
-    color: 'rgba(96,100,109, 1)',
+    fontSize: 20,
+    color: 'black',
     lineHeight: 24,
     textAlign: 'center',
   },
   tabBarInfoContainer: {
     position: 'absolute',
-    bottom: 0,
+    height: '30%',
+    top: 100,
     left: 0,
     right: 0,
+    alignContent: 'center',
     ...Platform.select({
       ios: {
-        shadowColor: 'black',
+        shadowColor: '#00aeef',
         shadowOffset: { height: -3 },
         shadowOpacity: 0.1,
         shadowRadius: 3,
@@ -201,22 +164,10 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
   },
   tabBarInfoText: {
-    fontSize: 17,
-    color: 'rgba(96,100,109, 1)',
+    fontWeight: 'bold',
+    fontSize: 20,
+    paddingTop: 0,
+    color: 'black',
     textAlign: 'center',
-  },
-  navigationFilename: {
-    marginTop: 5,
-  },
-  helpContainer: {
-    marginTop: 15,
-    alignItems: 'center',
-  },
-  helpLink: {
-    paddingVertical: 15,
-  },
-  helpLinkText: {
-    fontSize: 14,
-    color: '#2e78b7',
   },
 });
