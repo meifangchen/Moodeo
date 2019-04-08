@@ -8,6 +8,8 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+
+import {SearchBar} from 'react-native-elements'
 import { WebBrowser } from 'expo';
 
 import { MonoText } from '../components/StyledText';
@@ -15,10 +17,15 @@ import {AuthButton} from '../components/AuthButton';
 
 export default class HomeScreen extends React.Component {
   state = {
-    item: ''
+    item: '',
+    search:'',
   }
   static navigationOptions = {
     header: null,
+  };
+
+  updateSearch = search => {
+    this.setState({ search });
   };
 
   onPressGenerateItem() { 
@@ -41,6 +48,7 @@ export default class HomeScreen extends React.Component {
    };
 
   render() {
+    const { search } = this.state;
     return (
       <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
@@ -56,18 +64,20 @@ export default class HomeScreen extends React.Component {
           </View>
 
           <View style={styles.getStartedContainer}>
-            {this._maybeRenderDevelopmentModeWarning()}
+            
 
-            <Text style={styles.getStartedText}>Get started by opening</Text>
+          <Text style={styles.getStartedText}>Get started by opening</Text>
+          <SearchBar
+            placeholder="Type Here..."
+            onChangeText={this.updateSearch}
+            value={search}
+          />
 
-            <View style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
-              <MonoText style={styles.codeHighlightText}>screens/HomeScreen.js</MonoText>
-            </View>
-          
+          <AuthButton onPress={() => this.onPressGenerateItem()}>Recommend me food items</AuthButton>
           <Text style={styles.getStartedText}>
           {this.state.item}
           </Text>
-          <AuthButton onPress={() => this.onPressGenerateItem()}>Recommend me</AuthButton>
+
           </View>
 
           <View style={styles.helpContainer}>
