@@ -83,3 +83,4 @@ Checked in codebase to github.
   - Implemented UI features for ProfileScreen.
 - 4/06/2019
   - Added checkbox to ProfileScreen.
+  - Add SearchBar to HomeScreen.
