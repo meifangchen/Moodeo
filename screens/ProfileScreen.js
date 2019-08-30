@@ -134,7 +134,7 @@ onEggCheckChange() {
           onChangeText={height => this.setState({ height })}
           value={this.state.height}
         />
-          <AuthInput
+        <AuthInput
           placeholder=''
           label='Weight:(In lbs)'
           onChangeText={weight => this.setState({ weight })}

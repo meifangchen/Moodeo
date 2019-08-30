@@ -35,13 +35,13 @@ export default class HomeScreen extends React.Component {
   }
   onPressGenerateItem() { 
    
-    const parseData = [{foodName:"apple", diabetesFriendly:"hi"},
-    {foodName:"peach", diabetesFriendly:"world"}];
+    const parseData = [{foodName:"vegs", diabetesFriendly:"dry apple"},
+    {foodName:"vegs", diabetesFriendly:"dry peach"}];
     
     result2 = "";
 
     parseData.forEach(function(foodItem){
-     if(foodItem.foodName == "peach") {
+     if(foodItem.foodName == "vegs") {
         result2 = foodItem.diabetesFriendly;
     }
   });

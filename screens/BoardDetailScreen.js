@@ -85,7 +85,7 @@ class BoardDetailScreen extends Component {
           <View style={styles.detailButton}>
             <Button
               large
-              backgroundColor={'#999999'}
+              backgroundColor={'#00aeef'}
               color={'#FFFFFF'}
               leftIcon={{name: 'delete'}}
               title='Delete'

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, ScrollView, ActivityIndicator, View, TextInput } from 'react-native';
 import { Button } from 'react-native-elements';
 import firebase from '../Firebase';
+import { AuthInput } from '../components/AuthInput';
 
 class EditBoardScreen extends Component {
   static navigationOptions = {
@@ -89,18 +90,18 @@ class EditBoardScreen extends Component {
         </View>
         <View style={styles.subContainer}>
           <TextInput
-              multiline={true}
-              numberOfLines={4}
-              placeholder={'Quantity'}
-              value={this.state.description}
-              onChangeText={(text) => this.updateTextInput(text, 'description')}
-          />
+                multiline={true}
+                numberOfLines={4}
+                placeholder={'Notes'}
+                value={this.state.author}
+                onChangeText={(text) => this.updateTextInput(text, 'author')}
+            />
         </View>
         <View style={styles.subContainer}>
           <TextInput
-              placeholder={'Notes'}
-              value={this.state.author}
-              onChangeText={(text) => this.updateTextInput(text, 'author')}
+              placeholder={'Quantity'}
+              value={this.state.description}
+              onChangeText={(text) => this.updateTextInput(text, 'description')}
           />
         </View>
         <View style={styles.button}>
@@ -108,6 +109,7 @@ class EditBoardScreen extends Component {
             large
             leftIcon={{name: 'update'}}
             title='Update'
+            backgroundColor={'#00aeef'}
             onPress={() => this.updateBoard()} />
         </View>
       </ScrollView>
@@ -124,7 +126,10 @@ const styles = StyleSheet.create({
     flex: 1,
     marginBottom: 20,
     padding: 5,
+    paddingTop: 10,
+    paddingBottom: 10,
     borderBottomWidth: 2,
+    fontSize: 20,
     borderBottomColor: '#CCCCCC',
   },
   activity: {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { ScrollView, StyleSheet} from 'react-native';
-import { List, ListItem, Button, Icon } from 'react-native-elements';
+
 import firebase from '../Firebase';
 
 class SettingsScreen extends React.Component {

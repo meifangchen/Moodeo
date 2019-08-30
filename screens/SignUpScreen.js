@@ -1,5 +1,6 @@
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Button,Text } from 'react-native';
+
 import * as firebase from 'firebase';
 import { AuthInput } from '../components/AuthInput';
 import { AuthButton } from '../components/AuthButton';
