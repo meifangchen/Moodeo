@@ -1,6 +1,11 @@
 # FoodManager
 Create a nutrient food recommendation system targeted for older adults.
 
+#Setup Environment
+-Start issue: if Metro Bundle can start on certain port in the localhost but still cannot build and send the link to the mobile phone. SOLUTION: enter "expo publish" and log in expo with username: meifang417@gmail.com and pass:pxxxxxxx (Link: https://forums.expo.io/t/tunnel-url-not-found-failed-back-to-lan-url/14380/5 )
+
+-Steps of starting application: npm start (or expo start) -> login expo via cell phone -> send link to cell phone in localhost:xxxxx, connection: Tunnel, under the same network environment (either both platforms are WIFI or Cellular) 
+
 # Log:
 - 1/17/2019
 Read research papers regarding how to build a recommendation system.
@@ -84,3 +89,6 @@ Checked in codebase to github.
 - 4/06/2019
   - Added checkbox to ProfileScreen.
   - Add SearchBar to HomeScreen.
+
+- 8/30/2019
+  - Set up environment.
