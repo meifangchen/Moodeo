@@ -100,7 +100,7 @@ export default class HomeScreen extends React.Component {
           <Text style={styles.getStartedText}>
           {this.state.item}
           </Text>
-          <WebView
+        <WebView
           javaScriptEnabled={true}
           source={{ html: "<html><body><iframe width='560' height='315' src='https://www.youtube.com/embed/RJa4kG1N3d0' frameborder='0' allowfullscreen></iframe></body></html>" }}
         />
