@@ -90,5 +90,7 @@ Checked in codebase to github.
   - Added checkbox to ProfileScreen.
   - Add SearchBar to HomeScreen.
 
-- 8/30/2019
+- 8/29/2019
   - Set up environment.
+- 8/30/2019
+  - Add video section.
