@@ -4,7 +4,7 @@ import { createStackNavigator, createBottomTabNavigator } from 'react-navigation
 
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
-import LinksScreen from '../screens/LinksScreen';
+import MoodeoScreen from '../screens/MoodeoScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import BoardScreen from '../screens/BoardScreen';
 import BoardDetailScreen from '../screens/BoardDetailScreen';
@@ -30,12 +30,12 @@ HomeStack.navigationOptions = {
   ),
 };
 
-const LinksStack = createStackNavigator({
-  Links: LinksScreen,
+const MoodeoStack = createStackNavigator({
+  Moodeo: MoodeoScreen,
 });
 
-LinksStack.navigationOptions = {
-  tabBarLabel: 'Links',
+MoodeoStack.navigationOptions = {
+  tabBarLabel: 'Moodeo',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -92,7 +92,7 @@ ProfileStack.navigationOptions = {
 
 export default createBottomTabNavigator({
   HomeStack,
-  LinksStack,
+  MoodeoStack,
   ShoppingListStack,
   ProfileStack,
 });
