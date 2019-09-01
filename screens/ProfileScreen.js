@@ -9,11 +9,11 @@ export default class ProfileScreen extends React.Component {
 
   static navigationOptions = ({ navigation }) => {
     return {
-      title: 'Profile',
+      title: 'User Profile',
       headerRight: (
         <Button
           buttonStyle={{ padding: 0, backgroundColor: 'transparent' }}
-          icon={{ name: 'settings', style: { color: 'black', marginRight: 0, fontSize: 28 } }}
+          icon={{ name: 'settings', style: { color: '#00aeef', marginRight: 0, fontSize: 28 } }}
           onPress={() => { navigation.push('Settings') }}
         />
       ),
@@ -22,21 +22,24 @@ export default class ProfileScreen extends React.Component {
 
   state = {
     gender: '',
-    height: '',
-    weight: '',
+    hobby: '',
+    language: '',
     age: '',
     femaleChecked: true,
     maleChecked: false,
     yesChecked: true,
     noChecked: false,
-    vegetableChecked: false,
-    wholeGrainChecked: false,
-    peanutChecked: false,
-    eggsChecked: false
+    movieshowChecked: false,
+    musicChecked: false,
+    comedyChecked: false,
+    educationalChecked: false,
+    productReviewChecked: false,
+    vLogChecked: false,
+    gamingChecked: false
   }
 
   onPressSave() {  
-    const { gender, height, weight, age } = this.state;
+    const { gender, hobby, language, age } = this.state;
     alert("Your edited profile has been saved!");
   }
   onFCheckChange() {
@@ -66,44 +69,66 @@ export default class ProfileScreen extends React.Component {
     });
 }
 
-onVegetableCheckChange() {
-  this.setState({
-    vegetableChecked: !this.state.vegetableChecked,
-  });
-}
+  onMovieshowCheckChange() {
+    this.setState({
+      movieshowChecked: !this.state.movieshowChecked,
+    });
+  }
 
-onWholeGrainCheckChange() {
-  this.setState({
-    wholeGrainChecked: !this.state.wholeGrainChecked,
-  });
-}
+  onMusicCheckChange() {
+    this.setState({
+      musicChecked: !this.state.musicChecked,
+    });
+  }
 
-onPeanutCheckChange() {
-  this.setState({
-    peanutChecked: !this.state.peanutChecked,
-  });
-}
+  onComedyCheckChange() {
+    this.setState({
+      comedyChecked: !this.state.comedyChecked,
+    });
+  }
 
-onEggCheckChange() {
-  this.setState({
-    eggsChecked: !this.state.eggsChecked,
-  });
-}
+  onEducationalCheckChange() {
+    this.setState({
+      educationalChecked: !this.state.educationalChecked,
+    });
+  }
+
+  onProductReviewCheckChange() {
+    this.setState({
+      productReviewChecked: !this.state.productReviewChecked,
+    });
+  }
+
+  onVLogCheckChange() {
+    this.setState({
+      vLogChecked: !this.state.vLogChecked,
+    });
+  }
+
+  gamingCheckChange() {
+    this.setState({
+      gamingChecked: !this.state.gamingChecked,
+    });
+  }
+  
   onPressCancel() {
     this.setState({
       gender: '',
-      height: '',
-      weight: '',
+      hobby: '',
+      language: '',
       age: '',
       message: '',
       maleChecked: false,
       femaleChecked: false,
       yesChecked:false,
       noChecked:false,
-      vegetableChecked: false,
-      wholeGrainChecked: false,
-      peanutChecked: false,
-      eggsChecked: false
+      movieshowChecked: false,
+      musicChecked: false,
+      comedyChecked: false,
+      educationalChecked: false,
+      productReviewChecked: false,
+      vLogChecked: false,
+      gamingChecked: false
     });
   }
 
@@ -119,26 +144,13 @@ onEggCheckChange() {
             onPress= {() => this.onFCheckChange()}
             checked={this.state.femaleChecked}
           />
-          <CheckBox 
-            title='Male'
-            checkedColor='#00aeef'
-            checkedIcon='dot-circle-o'
-            uncheckedIcon='circle-o'
-            onPress= {() => this.onMCheckChange()}
-            checked={this.state.maleChecked}
-          />
-        
-        <AuthInput
-          placeholder=''
-          label='Height:(In inches)'
-          onChangeText={height => this.setState({ height })}
-          value={this.state.height}
-        />
-        <AuthInput
-          placeholder=''
-          label='Weight:(In lbs)'
-          onChangeText={weight => this.setState({ weight })}
-          value={this.state.weight}
+        <CheckBox
+          title='Male'
+          checkedColor='#00aeef'
+          checkedIcon='dot-circle-o'
+          uncheckedIcon='circle-o'
+          onPress={() => this.onMCheckChange()}
+          checked={this.state.maleChecked}
         />
         <AuthInput
           placeholder=''
@@ -146,7 +158,19 @@ onEggCheckChange() {
           onChangeText={age => this.setState({ age })}
           value={this.state.age}
         />
-        <Text style={styles.labelText}>Do you have diabetes?</Text>
+        <AuthInput
+          placeholder=''
+          label='What is your hobby?'
+          onChangeText={hobby => this.setState({ hobby })}
+          value={this.state.hobby}
+        />
+        <AuthInput
+          placeholder=''
+          label='What language do you speak?'
+          onChangeText={language => this.setState({ language })}
+          value={this.state.language}
+        />
+        <Text style={styles.labelText}>Do you like pets?</Text>
           <CheckBox 
             title='Yes'
             checkedColor='#00aeef'
@@ -164,41 +188,63 @@ onEggCheckChange() {
             onPress= {() => this.onNoCheckChange()}
             checked={this.state.noChecked}
           />
-        <Text style={styles.labelText}>Food preferences</Text>
+        <Text style={styles.labelText}>Video type preferences</Text>
           <CheckBox 
-            title='Vegetable'
+            title='Movie/Show'
             checkedColor='#00aeef'
             //checkedIcon='dot-circle-o'
             //uncheckedIcon='circle-o'
-            onPress= {() => this.onVegetableCheckChange()}
-            checked={this.state.vegetableChecked}
+            onPress= {() => this.onMovieshowCheckChange()}
+            checked={this.state.movieshowChecked}
             fontSize='20'
           />
           <CheckBox 
-            title='Whole grain'
+            title='Music'
             checkedColor='#00aeef'
             //checkedIcon='dot-circle-o'
             //uncheckedIcon='circle-o'
-            onPress= {() => this.onWholeGrainCheckChange()}
-            checked={this.state.wholeGrainChecked}
-          />
-        <Text style={styles.labelText}>Food allergies</Text>
-          <CheckBox 
-            title='Egg'
-            checkedColor='#00aeef'
-            //checkedIcon='dot-circle-o'
-            //uncheckedIcon='circle-o'
-            onPress= {() => this.onEggCheckChange()}
-            checked={this.state.eggsChecked}
-            fontSize='20'
+            onPress= {() => this.onMusicCheckChange()}
+            checked={this.state.musicChecked}
           />
           <CheckBox 
-            title='Peanut'
+            title='Comedy'
             checkedColor='#00aeef'
             //checkedIcon='dot-circle-o'
             //uncheckedIcon='circle-o'
-            onPress= {() => this.onPeanutCheckChange()}
-            checked={this.state.peanutChecked}
+            onPress= {() => this.onComedyCheckChange()}
+            checked={this.state.comedyChecked}
+          />
+          <CheckBox 
+            title='Educational'
+            checkedColor='#00aeef'
+            //checkedIcon='dot-circle-o'
+            //uncheckedIcon='circle-o'
+            onPress= {() => this.onEducationalCheckChange()}
+            checked={this.state.educationalChecked}
+          />
+          <CheckBox 
+            title='Product Review'
+            checkedColor='#00aeef'
+            //checkedIcon='dot-circle-o'
+            //uncheckedIcon='circle-o'
+            onPress= {() => this.onProductReviewCheckChange()}
+            checked={this.state.productReviewChecked}
+          />
+          <CheckBox 
+            title='VLog'
+            checkedColor='#00aeef'
+            //checkedIcon='dot-circle-o'
+            //uncheckedIcon='circle-o'
+            onPress= {() => this.onVLogCheckChange()}
+            checked={this.state.vLogChecked}
+          />
+          <CheckBox 
+            title='Gaming'
+            checkedColor='#00aeef'
+            //checkedIcon='dot-circle-o'
+            //uncheckedIcon='circle-o'
+            onPress= {() => this.gamingCheckChange()}
+            checked={this.state.gamingChecked}
           />
         <AuthButton onPress={() => this.onPressSave()}>Save</AuthButton>
         <AuthButton onPress={() => this.onPressCancel()}>Cancel</AuthButton>

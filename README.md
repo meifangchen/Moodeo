@@ -94,3 +94,8 @@ Checked in codebase to github.
   - Set up environment.
 - 8/30/2019
   - Add video section.
+- 8/31/2019
+  - Convert LinksScreen to MoodeoScreen.
+  - Edit home page.
+  - Convert Shopping List screen to video list screen.
+  - Edit user profile.
