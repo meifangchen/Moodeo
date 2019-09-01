@@ -2,17 +2,13 @@ import React from 'react';
 import {
   Image,
   Platform,
-  ScrollView,
   StyleSheet,
   Text,
   View,
   Picker,
   Button,
-  WebView
 } from 'react-native';
 
-import { WebBrowser } from 'expo';
-import { MonoText } from '../components/StyledText';
 import {AuthButton} from '../components/AuthButton';
 
 export default class HomeScreen extends React.Component {
@@ -23,7 +19,7 @@ export default class HomeScreen extends React.Component {
 
   static navigationOptions = ({ navigation }) => {
     return {
-      title: 'Welcome to FoodManager',
+      title: 'Welcome to Moodeo',
     };
   };
   clickMe = () => {
@@ -70,7 +66,7 @@ export default class HomeScreen extends React.Component {
         </View>
         
         <View style={styles.tabBarInfoContainer}>
-        <Text style={styles.tabBarInfoText}>Food type you are looking for</Text>
+        <Text style={styles.tabBarInfoText}>How is your mood?</Text>
           <Picker
             selectedValue={this.state.foodCategory}
             style={{height: 200, width: '100%'}}
@@ -78,32 +74,28 @@ export default class HomeScreen extends React.Component {
               this.setState({foodCategory: itemValue})
             }>
             <Picker.Item 
-            label="Please select an option" 
+            label="Please select a mood" 
             value=""
             style={{color: 'red'}}
             />
-            <Picker.Item label="All" value="all"/>
-            <Picker.Item label="Dairy product" value="dairyProduct"/>
-            <Picker.Item label="Meat" value="meat"/>
-            <Picker.Item label="Vegetable" value="vegetable"/>
-            <Picker.Item label="Whole grain" value="wholeGrain"/>
+            <Picker.Item label="Do not know" value="none"/>
+            <Picker.Item label="Angry" value="angry"/>
+            <Picker.Item label="Happy" value="happy"/>
+            <Picker.Item label="Lonely" value="lonely"/>
+            <Picker.Item label="Sad" value="sad"/>
+            
+            
           </Picker>
           
         </View>
-        <Button 
-            onPress={this.clickMe}
-            title='Confirm'>
-          </Button>
           <AuthButton 
-            onPress={() => this.onPressGenerateItem()}>Recommend Me
+            onPress={() => this.onPressGenerateItem()}>Recommend me a video
           </AuthButton>
           <Text style={styles.getStartedText}>
           {this.state.item}
           </Text>
-        <WebView
-          javaScriptEnabled={true}
-          source={{ html: "<html><body><iframe width='560' height='315' src='https://www.youtube.com/embed/RJa4kG1N3d0' frameborder='0' allowfullscreen></iframe></body></html>" }}
-        />
+
+        
       </View>
     );
   }
@@ -118,6 +110,7 @@ const styles = StyleSheet.create({
     paddingRight: 20,
     paddingBottom: 40
   },
+
   welcomeContainer: {
     alignItems: 'center',
     marginTop: 0,
