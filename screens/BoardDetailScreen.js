@@ -5,7 +5,7 @@ import firebase from '../Firebase';
 
 class BoardDetailScreen extends Component {
   static navigationOptions = {
-    title: 'Shopping Item Details',
+    title: 'Video Item Details',
   };
   constructor() {
     super();

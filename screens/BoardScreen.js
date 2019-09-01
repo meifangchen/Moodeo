@@ -6,11 +6,11 @@ import firebase from '../Firebase';
 class BoardScreen extends Component {
   static navigationOptions = ({ navigation }) => {
     return {
-      title: 'Shopping List',
+      title: 'Video List',
       headerRight: (
         <Button
           buttonStyle={{ padding: 0, backgroundColor: 'transparent' }}
-          icon={{ name: 'add-circle', style: { color: 'black', marginRight: 0, fontSize: 28 } }}
+          icon={{ name: 'add-circle', style: { color: '#00aeef', marginRight: 0, fontSize: 28 } }}
           onPress={() => { navigation.push('AddBoard') }}
         />
       ),
@@ -59,9 +59,10 @@ class BoardScreen extends Component {
           {
             this.state.boards.map((item, i) => (
               <ListItem
+                textStyle={{fontSize:30}}
                 key={i}
                 title={item.title}
-                leftIcon={{name: 'tag', type: 'font-awesome', color:'black'}}
+                leftIcon={{name: 'tag', type: 'font-awesome', color:'#00aeef'}}
                 onPress={() => {
                   this.props.navigation.navigate('BoardDetails', {
                     boardkey: `${JSON.stringify(item.key)}`,

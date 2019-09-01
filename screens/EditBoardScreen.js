@@ -83,25 +83,30 @@ class EditBoardScreen extends Component {
       <ScrollView style={styles.container}>
         <View style={styles.subContainer}>
           <TextInput
-              placeholder={'Food Item Name'}
-              value={this.state.title}
-              onChangeText={(text) => this.updateTextInput(text, 'title')}
+            style={{fontSize:18}}
+            multiline={true}
+            numberOfLines={4}
+            placeholder={'Video Item Name'}
+            value={this.state.title}
+            onChangeText={(text) => this.updateTextInput(text, 'title')}
           />
         </View>
         <View style={styles.subContainer}>
           <TextInput
-                multiline={true}
-                numberOfLines={4}
-                placeholder={'Notes'}
-                value={this.state.author}
-                onChangeText={(text) => this.updateTextInput(text, 'author')}
+            style={{fontSize:18}}
+            multiline={true}
+            numberOfLines={4}
+            placeholder={'Notes'}
+            value={this.state.author}
+            onChangeText={(text) => this.updateTextInput(text, 'author')}
             />
         </View>
         <View style={styles.subContainer}>
           <TextInput
-              placeholder={'Quantity'}
-              value={this.state.description}
-              onChangeText={(text) => this.updateTextInput(text, 'description')}
+            style={{fontSize:18}}
+            placeholder={'View date'}
+            value={this.state.description}
+            onChangeText={(text) => this.updateTextInput(text, 'description')}
           />
         </View>
         <View style={styles.button}>

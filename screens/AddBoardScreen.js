@@ -60,13 +60,17 @@ class AddBoardScreen extends Component {
       <ScrollView style={styles.container}>
         <View style={styles.subContainer}>
           <TextInput
-              placeholder={'Food Item Name'}
-              value={this.state.title}
-              onChangeText={(text) => this.updateTextInput(text, 'title')}
+            multiline={true}
+            numberOfLines={4}
+            style={{fontSize:18}}
+            placeholder={'Video Item Name'}
+            value={this.state.title}
+            onChangeText={(text) => this.updateTextInput(text, 'title')}
           />
         </View>
         <View style={styles.subContainer}>
           <TextInput
+              style={{fontSize:18}}
               multiline={true}
               numberOfLines={4}
               placeholder={'Quantity'}
@@ -76,9 +80,12 @@ class AddBoardScreen extends Component {
         </View>
         <View style={styles.subContainer}>
           <TextInput
-              placeholder={'Notes'}
-              value={this.state.author}
-              onChangeText={(text) => this.updateTextInput(text, 'author')}
+            style={{fontSize:18}}
+            multiline={true}
+            numberOfLines={4}
+            placeholder={'Notes'}
+            value={this.state.author}
+            onChangeText={(text) => this.updateTextInput(text, 'author')}
           />
         </View>
         <View style={styles.button}>
