@@ -99,3 +99,7 @@ Checked in codebase to github.
   - Edit home page.
   - Convert Shopping List screen to video list screen.
   - Edit user profile.
+- 9/01/2019 
+  - Edit recommendation button in home screen to navigate to Moodeo screen.
+  - Change splash page.
+  - Add feature of recommendation for next video.
