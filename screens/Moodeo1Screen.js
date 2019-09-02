@@ -25,12 +25,14 @@ export default class MoodeoScreen extends React.Component {
         <WebView 
           style={StyleSheet.container}
           javaScriptEnabled={true}
-          source={{ html: "<html><body><iframe width='970' height='1134' src='https://www.youtube.com/embed/gwOykqd0tv0' frameborder='0' allowfullscreen></iframe></body></html>" }}
+          source={{ html: "<html><body><iframe width='970' height='1134' src='https://www.youtube.com/embed/IAODG6KaNBc' frameborder='0' allowfullscreen></iframe></body></html>" }}
         />
         <View style={styles.buttoncontainer}> 
-        <AuthButton onPress={() => {
-                          this.props.navigation.navigate('MoodeoNext');
-                        }}>Next video</AuthButton>
+        <AuthButton
+                        onPress={() => {
+                          this.props.navigation.navigate('Moodeo1');
+                        }}
+        >Next video</AuthButton>
         </View>
       </View> 
     );
