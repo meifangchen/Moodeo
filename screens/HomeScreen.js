@@ -30,24 +30,6 @@ export default class HomeScreen extends React.Component {
       alert(data);
     }
   }
-  onPressGenerateItem() { 
-   
-    const parseData = [{foodName:"vegs", diabetesFriendly:"dry apple"},
-    {foodName:"vegs", diabetesFriendly:"dry peach"}];
-    
-    result2 = "";
-
-    parseData.forEach(function(foodItem){
-     if(foodItem.foodName == "vegs") {
-        result2 = foodItem.diabetesFriendly;
-    }
-  });
-
-    this.setState({
-      item: result2
-    });
-
-   };
 
   render() {
     return (
@@ -89,7 +71,7 @@ export default class HomeScreen extends React.Component {
           
         </View>
           <AuthButton 
-            onPress={() => this.onPressGenerateItem()}>Recommend me a video
+            onPress={() => { this.props.navigation.navigate('Moodeo') }}>Recommend me a video
           </AuthButton>
           <Text style={styles.getStartedText}>
           {this.state.item}
