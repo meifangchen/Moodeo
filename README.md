@@ -103,3 +103,5 @@ Checked in codebase to github.
   - Edit recommendation button in home screen to navigate to Moodeo screen.
   - Change splash page.
   - Add feature of recommendation for next video.
+- 9/12/2019
+  - Fix navigation to home page.
