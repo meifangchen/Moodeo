@@ -16,7 +16,7 @@ class SignInScreen extends React.Component {
       user: null,
       error: '',
     }
-  
+
     onPressSignIn() {
       this.setState({
         authenticating: true,
@@ -25,11 +25,8 @@ class SignInScreen extends React.Component {
       const { email, password } = this.state;
   
       firebase.auth().signInWithEmailAndPassword(email, password)
-        .then(user => this.setState({
-          authenticating: false,
-          user,
-          error: '',
-        }))
+        .then( () => this.props.navigation.navigate('Home')
+        )
         .catch(() => {
           // Login was not successful
           firebase.auth().createUserWithEmailAndPassword(email, password)
