@@ -105,3 +105,5 @@ Checked in codebase to github.
   - Add feature of recommendation for next video.
 - 9/12/2019
   - Fix navigation to home page.
+- 9/12/2019
+  - Deal with videoURL string.
