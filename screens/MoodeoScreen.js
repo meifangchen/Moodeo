@@ -10,7 +10,14 @@ import {AuthButton} from '../components/AuthButton';
 export default class MoodeoScreen extends React.Component {
   state = {
     width: Dimensions.get('window').width,
-    height: Dimensions.get('window').height
+    height: Dimensions.get('window').height,
+    videoURL: this.getVideoURL()
+  }
+ 
+  getVideoURL() {  
+    videoKey = 'gwOykqd0tv0';
+    result = `<html><body><iframe width='970' height='1134' src=https://www.youtube.com/embed/${videoKey} frameborder='0' allowfullscreen></iframe></body></html>`;  
+    return result
   }
 
   static navigationOptions = ({ navigation }) => {
@@ -25,12 +32,12 @@ export default class MoodeoScreen extends React.Component {
         <WebView 
           style={StyleSheet.container}
           javaScriptEnabled={true}
-          source={{ html: "<html><body><iframe width='970' height='1134' src='https://www.youtube.com/embed/gwOykqd0tv0' frameborder='0' allowfullscreen></iframe></body></html>" }}
+          source={{ html: this.state.videoURL }}
         />
-        <View style={styles.buttoncontainer}> 
-        <AuthButton onPress={() => {
-                          this.props.navigation.navigate('MoodeoNext');
-                        }}>Next video</AuthButton>
+        <View style={styles.buttoncontainer}>
+          <AuthButton 
+            onPress={() => {this.props.navigation.navigate('MoodeoNext');}}>Next video
+          </AuthButton>
         </View>
       </View> 
     );
