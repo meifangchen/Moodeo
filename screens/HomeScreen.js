@@ -71,7 +71,7 @@ export default class HomeScreen extends React.Component {
           
         </View>
           <AuthButton 
-            onPress={() => { this.props.navigation.navigate('Moodeo') }}>Recommend me a video
+            onPress={() => { this.props.navigation.navigate('MoodeoHappy1Screen') }}>Recommend me a video
           </AuthButton>
           <Text style={styles.getStartedText}>
           {this.state.item}

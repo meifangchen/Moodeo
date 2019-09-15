@@ -4,8 +4,8 @@ import { createStackNavigator, createBottomTabNavigator } from 'react-navigation
 
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
-import MoodeoScreen from '../screens/MoodeoScreen';
-import Moodeo1Screen from '../screens/Moodeo1Screen';
+import MoodeoHappy1Screen from '../screens/MoodeoHappy1Screen';
+import MoodeoHappy2Screen from '../screens/MoodeoHappy2Screen';
 import ProfileScreen from '../screens/ProfileScreen';
 import BoardScreen from '../screens/BoardScreen';
 import BoardDetailScreen from '../screens/BoardDetailScreen';
@@ -32,8 +32,8 @@ HomeStack.navigationOptions = {
 };
 
 const MoodeoStack = createStackNavigator({
-  Moodeo: MoodeoScreen,
-  MoodeoNext: Moodeo1Screen,
+  MoodeoHappy1Screen: MoodeoHappy1Screen,
+  MoodeoHappy2Screen: MoodeoHappy2Screen
 });
 
 MoodeoStack.navigationOptions = {
