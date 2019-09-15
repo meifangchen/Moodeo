@@ -6,6 +6,12 @@ import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import MoodeoHappy1Screen from '../screens/MoodeoHappy1Screen';
 import MoodeoHappy2Screen from '../screens/MoodeoHappy2Screen';
+import MoodeoAngry1Screen from '../screens/MoodeoAngry1Screen';
+import MoodeoAngry2Screen from '../screens/MoodeoAngry2Screen';
+import MoodeoLonely1Screen from '../screens/MoodeoLonely1Screen';
+import MoodeoLonely2Screen from '../screens/MoodeoLonely2Screen';
+import MoodeoSad1Screen from '../screens/MoodeoSad1Screen';
+import MoodeoSad2Screen from '../screens/MoodeoSad2Screen';
 import ProfileScreen from '../screens/ProfileScreen';
 import BoardScreen from '../screens/BoardScreen';
 import BoardDetailScreen from '../screens/BoardDetailScreen';
@@ -33,7 +39,13 @@ HomeStack.navigationOptions = {
 
 const MoodeoStack = createStackNavigator({
   MoodeoHappy1Screen: MoodeoHappy1Screen,
-  MoodeoHappy2Screen: MoodeoHappy2Screen
+  MoodeoHappy2Screen: MoodeoHappy2Screen,
+  MoodeoAngry1Screen: MoodeoAngry1Screen,
+  MoodeoAngry2Screen: MoodeoAngry2Screen,
+  MoodeoLonely1Screen: MoodeoLonely1Screen,
+  MoodeoLonely2Screen: MoodeoLonely2Screen,
+  MoodeoSad1Screen: MoodeoSad1Screen,
+  MoodeoSad2Screen: MoodeoSad2Screen
 });
 
 MoodeoStack.navigationOptions = {

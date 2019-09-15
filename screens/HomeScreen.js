@@ -30,7 +30,18 @@ export default class HomeScreen extends React.Component {
       alert(data);
     }
   }
-
+  recommendVideoByMood() {
+    moodValue = this.state.foodCategory;
+    if(moodValue == 'angry') {
+      this.props.navigation.push('MoodeoAngry1Screen')
+    } else if(moodValue == 'lonely') {
+      this.props.navigation.push('MoodeoLonely1Screen')
+    } else if(moodValue == 'sad') {
+      this.props.navigation.push('MoodeoSad1Screen')
+    } else {
+      this.props.navigation.push('MoodeoHappy1Screen')
+    }
+  }
   render() {
     return (
       <View style={styles.container}>
@@ -71,7 +82,7 @@ export default class HomeScreen extends React.Component {
           
         </View>
           <AuthButton 
-            onPress={() => { this.props.navigation.navigate('MoodeoHappy1Screen') }}>Recommend me a video
+            onPress={() => this.recommendVideoByMood()}>Recommend me a video
           </AuthButton>
           <Text style={styles.getStartedText}>
           {this.state.item}
