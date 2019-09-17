@@ -107,3 +107,5 @@ Checked in codebase to github.
   - Fix navigation to home page.
 - 9/12/2019
   - Deal with videoURL string.
+- 9/16/2019
+  - Add hundreds of youtube video key tokens.
