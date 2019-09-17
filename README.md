@@ -1,5 +1,5 @@
-# FoodManager
-Create a nutrient food recommendation system targeted for older adults.
+# Moodeo (Mood + Video)
+Create a mood-oriented recommender targeted for older adults.
 
 #Setup Environment
 -Start issue: if Metro Bundle can start on certain port in the localhost but still cannot build and send the link to the mobile phone. SOLUTION: enter "expo publish" and log in expo with username: meifang417@gmail.com and pass:pxxxxxxx (Link: https://forums.expo.io/t/tunnel-url-not-found-failed-back-to-lan-url/14380/5 )
