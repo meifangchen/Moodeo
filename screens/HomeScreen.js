@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 
 import {AuthButton} from '../components/AuthButton';
+import Colors from '../constants/Colors';
 
 export default class HomeScreen extends React.Component {
   state = {
@@ -19,18 +20,17 @@ export default class HomeScreen extends React.Component {
 
   static navigationOptions = ({ navigation }) => {
     return {
-      title: 'Welcome to Moodeo',
-      header: null,
+      title: 'Home',
       headerStyle: {
         backgroundColor: 'white',
       },
-      headerTintColor: 'black',
+      headerTintColor: Colors.tintColor,
       headerTitleStyle: {
         paddingTop: 0,
         alignSelf: 'center',
         justifyContent: 'center',
         fontWeight: 'bold',
-        fontSize:22
+        fontSize:25
       }
     };
   };
@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
     paddingBottom: 40
   },
   buttonContainer: {
-    marginTop:480,
+    marginTop:410,
   },
   welcomeContainer: {
     alignItems: 'center',
@@ -131,7 +131,7 @@ const styles = StyleSheet.create({
   tabBarInfoContainer: {
     position: 'absolute',
     height: '50%',
-    top: 100,
+    top: 40,
     left: 0,
     right: 0,
     alignContent: 'center',

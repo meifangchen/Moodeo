@@ -29,7 +29,7 @@ export default class MoodeoSad2Screen extends React.Component {
       headerTitleStyle: {
         justifyContent: 'center',
         fontWeight: 'bold',
-        fontSize:20
+        fontSize:25
       },
       headerTintColor:Colors.tintColor
     };

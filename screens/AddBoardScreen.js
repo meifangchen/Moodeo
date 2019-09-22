@@ -11,7 +11,7 @@ class AddBoardScreen extends Component {
       alignSelf: 'center',
       justifyContent: 'center',
       fontWeight: 'bold',
-      fontSize:20
+      fontSize:25
     }
   };
   constructor() {
