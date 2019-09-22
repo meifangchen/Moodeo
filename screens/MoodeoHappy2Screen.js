@@ -25,6 +25,11 @@ export default class MoodeoHappy2Screen extends React.Component {
   static navigationOptions = ({ navigation }) => {
     return {
       title: 'Moodeo Happy 2',
+      headerTitleStyle: {
+        justifyContent: 'center',
+        fontWeight: 'bold',
+        fontSize:20
+      }
     };
   };
 

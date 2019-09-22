@@ -10,6 +10,11 @@ export default class ProfileScreen extends React.Component {
   static navigationOptions = ({ navigation }) => {
     return {
       title: 'User Profile',
+      headerTitleStyle: {
+        justifyContent: 'center',
+        fontWeight: 'bold',
+        fontSize:20
+      },
       headerRight: (
         <Button
           buttonStyle={{ padding: 0, backgroundColor: 'transparent' }}

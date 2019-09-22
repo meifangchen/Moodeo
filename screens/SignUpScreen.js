@@ -8,6 +8,11 @@ import { AuthButton } from '../components/AuthButton';
 class SignUpScreen extends React.Component {
   static navigationOptions = {
     title: 'Sign Up',
+    headerTitleStyle: {
+      justifyContent: 'center',
+      fontWeight: 'bold',
+      fontSize:20
+    }
   };
 
   constructor() {

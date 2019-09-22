@@ -25,12 +25,18 @@ export default class MoodeoLonely2Screen extends React.Component {
   static navigationOptions = ({ navigation }) => {
     return {
       title: 'Moodeo Lonely 2',
+      headerTitleStyle: {
+        justifyContent: 'center',
+        fontWeight: 'bold',
+        fontSize:20
+      }
     };
   };
 
   render() {
     return (
-      <View style={styles.container}>    
+      <View style={styles
+      .container}>    
         <WebView 
           style={StyleSheet.container}
           javaScriptEnabled={true}

@@ -25,6 +25,11 @@ export default class MoodeoAngry2Screen extends React.Component {
   static navigationOptions = ({ navigation }) => {
     return {
       title: 'Moodeo Angry 2',
+      headerTitleStyle: {
+        justifyContent: 'center',
+        fontWeight: 'bold',
+        fontSize:20
+      }
     };
   };
 

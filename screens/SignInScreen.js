@@ -7,6 +7,11 @@ import { AuthButton } from '../components/AuthButton';
 class SignInScreen extends React.Component {
     static navigationOptions = {
       title: 'Sign In',
+      headerTitleStyle: {
+        justifyContent: 'center',
+        fontWeight: 'bold',
+        fontSize:20
+      }
     };
     
     state = {

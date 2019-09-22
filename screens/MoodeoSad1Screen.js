@@ -15,7 +15,7 @@ export default class MoodeoSad1Screen extends React.Component {
   }
  
   getVideoURL() {  
-    videoKeyList = ['RQOU5ZLlwcQ','PgD56JEUWFA','BuhrHclfW8o','cmo88SMAcu0','GFnLw6ileXQ'];
+    videoKeyList = ['mqSQvoinDE4','F8umfBRlwW8','RQOU5ZLlwcQ','PgD56JEUWFA','BuhrHclfW8o','cmo88SMAcu0','GFnLw6ileXQ'];
     RandomNumber = Math.floor(Math.random() * (videoKeyList.length-1)) + 0 ;
     videoKey = videoKeyList[RandomNumber];
     result = `<html><body><iframe width='970' height='1134' src=https://www.youtube.com/embed/${videoKey} frameborder='0' allowfullscreen></iframe></body></html>`;  
@@ -25,6 +25,11 @@ export default class MoodeoSad1Screen extends React.Component {
   static navigationOptions = ({ navigation }) => {
     return {
       title: 'Moodeo Sad 1',
+      headerTitleStyle: {
+        justifyContent: 'center',
+        fontWeight: 'bold',
+        fontSize:20
+      }
     };
   };
 

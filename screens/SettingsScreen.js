@@ -8,6 +8,11 @@ class SettingsScreen extends React.Component {
   static navigationOptions = ({ navigation }) => {
     return {
       title: 'Settings',
+      headerTitleStyle: {
+        justifyContent: 'center',
+        fontWeight: 'bold',
+        fontSize:20
+      }
     };
   };
 
