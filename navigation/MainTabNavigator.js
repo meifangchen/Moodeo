@@ -35,6 +35,13 @@ HomeStack.navigationOptions = {
       }
     />
   ),
+  tabBarOptions: {
+    activeTintColor: '#00aeef',
+    inactiveTintColor: 'gray',
+    labelStyle: {
+      fontSize: 16,
+    },
+  },
 };
 
 const MoodeoStack = createStackNavigator({
@@ -56,6 +63,16 @@ MoodeoStack.navigationOptions = {
       name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'}
     />
   ),
+  tabBarOptions: {
+    activeTintColor: '#00aeef',
+    inactiveTintColor: 'gray',
+    labelStyle: {
+      fontSize: 16,
+    },
+  },
+  TabBarIcon: {
+    backgroundColor: 'red'
+  }
 };
 
 const ShoppingListStack = createStackNavigator({
@@ -87,6 +104,13 @@ ShoppingListStack.navigationOptions = {
       name={Platform.OS === 'ios' ? 'ios-list' : 'md-list'}
     />
   ),
+  tabBarOptions: {
+    activeTintColor: '#00aeef',
+    inactiveTintColor: 'gray',
+    labelStyle: {
+      fontSize: 16,
+    },
+  },
 };
 
 const ProfileStack = createStackNavigator({
@@ -102,6 +126,13 @@ ProfileStack.navigationOptions = {
       name={Platform.OS === 'ios' ? 'ios-contact' : 'md-contact'}
     />
   ),
+  tabBarOptions: {
+    activeTintColor: '#00aeef',
+    inactiveTintColor: 'gray',
+    labelStyle: {
+      fontSize: 16,
+    },
+  },
 };
 
 export default createBottomTabNavigator({

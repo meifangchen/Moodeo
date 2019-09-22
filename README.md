@@ -113,3 +113,5 @@ Checked in codebase to github.
   - Change header bar style.
   - Hide header bar.
   - Edit home page picker style, delete image.
+  - Change Authbutton font size.
+  

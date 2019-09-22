@@ -7,6 +7,13 @@ class BoardScreen extends Component {
   static navigationOptions = ({ navigation }) => {
     return {
       title: 'Video List',
+      headerTitleStyle: {
+        paddingTop: 0,
+        alignSelf: 'center',
+        justifyContent: 'center',
+        fontWeight: 'bold',
+        fontSize:20
+      },
       headerRight: (
         <Button
           buttonStyle={{ padding: 0, backgroundColor: 'transparent' }}
