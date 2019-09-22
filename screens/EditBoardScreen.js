@@ -7,6 +7,13 @@ import { AuthInput } from '../components/AuthInput';
 class EditBoardScreen extends Component {
   static navigationOptions = {
     title: 'Edit Board',
+    headerTitleStyle: {
+      paddingTop: 0,
+      alignSelf: 'center',
+      justifyContent: 'center',
+      fontWeight: 'bold',
+      fontSize:20
+    }
   };
   constructor() {
     super();

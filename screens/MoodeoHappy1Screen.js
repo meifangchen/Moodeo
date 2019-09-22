@@ -29,7 +29,7 @@ export default class MoodeoHappy1Screen extends React.Component {
         justifyContent: 'center',
         fontWeight: 'bold',
         fontSize:20
-      }
+      },
     };
   };
 
