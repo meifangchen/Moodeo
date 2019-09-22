@@ -29,17 +29,16 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     paddingBottom: 10,
     color: '#333',
-    fontSize: 20,
+    fontSize: 28,
     fontWeight: '700',
     width: '100%',
   },
   input: {
     paddingRight: 5,
     paddingLeft: 5,
-    paddingBottom: 2,
     paddingBottom: 10,
     color: '#333',
-    fontSize: 20,
+    fontSize: 28,
     width: '100%',
   }
 });

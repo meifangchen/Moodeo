@@ -11,7 +11,7 @@ const AuthButton = ({ onPress, children }) => {
 
 const styles = StyleSheet.create({
   button: {
-    marginTop: 20,
+    marginTop: 30,
     padding: 20,
     width: '100%',
     backgroundColor: '#7d3f98',

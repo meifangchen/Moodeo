@@ -46,6 +46,7 @@ class SignInScreen extends React.Component {
               authenticating: false,
               user: null,
               error: 'Authentication Failure',
+
             }))
         })
     }
@@ -85,21 +86,27 @@ class SignInScreen extends React.Component {
       return (
         <View style={styles.form}>
           <AuthInput
-            placeholder='Enter your email...'
-            label='Email'
+            placeholder=''
+            label='Email:'
             onChangeText={email => this.setState({ email })}
             value={this.state.email}
           />
           <AuthInput
-            placeholder='Enter your password...'
-            label='Password'
+            placeholder=''
+            label='Password:'
             secureTextEntry
             onChangeText={password => this.setState({ password })}
             value={this.state.password}
           />
-          <AuthButton onPress={() => this.onPressSignIn()}>Log In</AuthButton>
-          <AuthButton onPress={() => { this.props.navigation.navigate('SignUp') }}>Sign Up</AuthButton>
-          <Text>{this.state.error}</Text>
+          <AuthButton onPress={() => this.onPressSignIn()}>Sign In</AuthButton>
+          <Text style={styles.text}>Not a member?</Text>
+          <AuthButton 
+          style={styles.signUpButton}
+          onPress={() => { this.props.navigation.navigate('SignUp') 
+          }}>Sign Up</AuthButton>
+          <Text style={styles.errorText}
+          
+          >{this.state.error}</Text>
         </View>
       )
   
@@ -124,7 +131,17 @@ const styles = StyleSheet.create({
   },
   form: {
     flex: 1
-  }
+  },
+  errorText: {
+    color: 'red',
+    fontSize: 26,
+    paddingTop: 40
+  },
+  text: {
+    fontSize: 18,
+    paddingTop: 22,
+    color: Colors.tintColor
+  },
 });
 
 export default SignInScreen;
