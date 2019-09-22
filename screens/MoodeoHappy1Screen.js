@@ -6,6 +6,7 @@ import {
   Dimensions,
 } from 'react-native';
 import {AuthButton} from '../components/AuthButton';
+import Colors from '../constants/Colors';
 
 export default class MoodeoHappy1Screen extends React.Component {
   state = {
@@ -30,6 +31,7 @@ export default class MoodeoHappy1Screen extends React.Component {
         fontWeight: 'bold',
         fontSize:20
       },
+      headerTintColor:Colors.tintColor
     };
   };
 

@@ -36,7 +36,7 @@ HomeStack.navigationOptions = {
     />
   ),
   tabBarOptions: {
-    activeTintColor: '#00aeef',
+    activeTintColor: '#7d3f98',
     inactiveTintColor: 'gray',
     labelStyle: {
       fontSize: 16,
@@ -64,7 +64,7 @@ MoodeoStack.navigationOptions = {
     />
   ),
   tabBarOptions: {
-    activeTintColor: '#00aeef',
+    activeTintColor: '#7d3f98',
     inactiveTintColor: 'gray',
     labelStyle: {
       fontSize: 16,
@@ -105,7 +105,7 @@ ShoppingListStack.navigationOptions = {
     />
   ),
   tabBarOptions: {
-    activeTintColor: '#00aeef',
+    activeTintColor: '#7d3f98',
     inactiveTintColor: 'gray',
     labelStyle: {
       fontSize: 16,
@@ -127,7 +127,7 @@ ProfileStack.navigationOptions = {
     />
   ),
   tabBarOptions: {
-    activeTintColor: '#00aeef',
+    activeTintColor: '#7d3f98',
     inactiveTintColor: 'gray',
     labelStyle: {
       fontSize: 16,

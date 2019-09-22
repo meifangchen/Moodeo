@@ -67,7 +67,7 @@ export default class HomeScreen extends React.Component {
             <Picker.Item
               label="Select a mood"
               value=""
-              color="#00aeef"
+              color="#7d3f98"
             />
             <Picker.Item label="Angry" fontSize="20" value="angry" />
             <Picker.Item label="Happy" value="happy" />
@@ -136,7 +136,7 @@ const styles = StyleSheet.create({
     alignContent: 'center',
     ...Platform.select({
       ios: {
-        shadowColor: '#00aeef',
+        shadowColor: '#7d3f98',
         shadowOffset: { height: -3 },
         shadowOpacity: 0.1,
         shadowRadius: 3,
@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 38,
     paddingTop: 0,
-    color: 'black',
+    color: '#7d3f98',
     textAlign: 'center',
   },
 });

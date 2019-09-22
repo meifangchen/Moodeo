@@ -123,7 +123,7 @@ class EditBoardScreen extends Component {
             large
             leftIcon={{name: 'update'}}
             title='Update'
-            backgroundColor={'#00aeef'}
+            backgroundColor={'#7d3f98'}
             onPress={() => this.updateBoard()} />
         </View>
       </ScrollView>

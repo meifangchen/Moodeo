@@ -20,7 +20,7 @@ export default class ProfileScreen extends React.Component {
       headerRight: (
         <Button
           buttonStyle={{ padding: 0, backgroundColor: 'transparent' }}
-          icon={{ name: 'settings', style: { color: '#00aeef', marginRight: 0, fontSize: 28 } }}
+          icon={{ name: 'settings', style: { color: '#7d3f98', marginRight: 0, fontSize: 28 } }}
           onPress={() => { navigation.push('Settings') }}
         />
       ),
@@ -145,7 +145,7 @@ export default class ProfileScreen extends React.Component {
         <Text style={styles.labelText}>Gender</Text>
           <CheckBox 
             title='Female'
-            checkedColor='#00aeef'
+            checkedColor='#7d3f98'
             checkedIcon='dot-circle-o'
             uncheckedIcon='circle-o'
             onPress= {() => this.onFCheckChange()}
@@ -153,7 +153,7 @@ export default class ProfileScreen extends React.Component {
           />
         <CheckBox
           title='Male'
-          checkedColor='#00aeef'
+          checkedColor='#7d3f98'
           checkedIcon='dot-circle-o'
           uncheckedIcon='circle-o'
           onPress={() => this.onMCheckChange()}
@@ -180,7 +180,7 @@ export default class ProfileScreen extends React.Component {
         <Text style={styles.labelText}>Do you like pets?</Text>
           <CheckBox 
             title='Yes'
-            checkedColor='#00aeef'
+            checkedColor='#7d3f98'
             checkedIcon='dot-circle-o'
             uncheckedIcon='circle-o'
             onPress= {() => this.onYesCheckChange()}
@@ -189,7 +189,7 @@ export default class ProfileScreen extends React.Component {
           />
           <CheckBox 
             title='No'
-            checkedColor='#00aeef'
+            checkedColor='#7d3f98'
             checkedIcon='dot-circle-o'
             uncheckedIcon='circle-o'
             onPress= {() => this.onNoCheckChange()}
@@ -198,7 +198,7 @@ export default class ProfileScreen extends React.Component {
         <Text style={styles.labelText}>Video type preferences</Text>
           <CheckBox 
             title='Movie/Show'
-            checkedColor='#00aeef'
+            checkedColor='#7d3f98'
             //checkedIcon='dot-circle-o'
             //uncheckedIcon='circle-o'
             onPress= {() => this.onMovieshowCheckChange()}
@@ -207,7 +207,7 @@ export default class ProfileScreen extends React.Component {
           />
           <CheckBox 
             title='Music'
-            checkedColor='#00aeef'
+            checkedColor='#7d3f98'
             //checkedIcon='dot-circle-o'
             //uncheckedIcon='circle-o'
             onPress= {() => this.onMusicCheckChange()}
@@ -215,7 +215,7 @@ export default class ProfileScreen extends React.Component {
           />
           <CheckBox 
             title='Comedy'
-            checkedColor='#00aeef'
+            checkedColor='#7d3f98'
             //checkedIcon='dot-circle-o'
             //uncheckedIcon='circle-o'
             onPress= {() => this.onComedyCheckChange()}
@@ -223,7 +223,7 @@ export default class ProfileScreen extends React.Component {
           />
           <CheckBox 
             title='Educational'
-            checkedColor='#00aeef'
+            checkedColor='#7d3f98'
             //checkedIcon='dot-circle-o'
             //uncheckedIcon='circle-o'
             onPress= {() => this.onEducationalCheckChange()}
@@ -231,7 +231,7 @@ export default class ProfileScreen extends React.Component {
           />
           <CheckBox 
             title='Product Review'
-            checkedColor='#00aeef'
+            checkedColor='#7d3f98'
             //checkedIcon='dot-circle-o'
             //uncheckedIcon='circle-o'
             onPress= {() => this.onProductReviewCheckChange()}
@@ -239,7 +239,7 @@ export default class ProfileScreen extends React.Component {
           />
           <CheckBox 
             title='VLog'
-            checkedColor='#00aeef'
+            checkedColor='#7d3f98'
             //checkedIcon='dot-circle-o'
             //uncheckedIcon='circle-o'
             onPress= {() => this.onVLogCheckChange()}
@@ -247,7 +247,7 @@ export default class ProfileScreen extends React.Component {
           />
           <CheckBox 
             title='Gaming'
-            checkedColor='#00aeef'
+            checkedColor='#7d3f98'
             //checkedIcon='dot-circle-o'
             //uncheckedIcon='circle-o'
             onPress= {() => this.gamingCheckChange()}
