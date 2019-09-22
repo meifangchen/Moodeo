@@ -3,6 +3,7 @@ import { ActivityIndicator, StyleSheet, View, Text } from 'react-native';
 import * as firebase from 'firebase';
 import { AuthInput } from '../components/AuthInput';
 import { AuthButton } from '../components/AuthButton';
+import Colors from '../constants/Colors';
 
 class SignInScreen extends React.Component {
     static navigationOptions = {
@@ -11,7 +12,8 @@ class SignInScreen extends React.Component {
         justifyContent: 'center',
         fontWeight: 'bold',
         fontSize:20
-      }
+      },
+      headerTintColor:Colors.tintColor
     };
     
     state = {

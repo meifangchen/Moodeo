@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, ScrollView, ActivityIndicator, View, Text } from 'react-native';
 import { List, ListItem, Button, Icon } from 'react-native-elements';
 import firebase from '../Firebase';
+import Colors from '../constants/Colors';
 
 class BoardScreen extends Component {
   static navigationOptions = ({ navigation }) => {
@@ -14,6 +15,7 @@ class BoardScreen extends Component {
         fontWeight: 'bold',
         fontSize:20
       },
+      headerTintColor:Colors.tintColor,
       headerRight: (
         <Button
           buttonStyle={{ padding: 0, backgroundColor: 'transparent' }}

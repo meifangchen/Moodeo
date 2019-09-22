@@ -4,6 +4,7 @@ import { List, ListItem, CheckBox,Button, Icon } from 'react-native-elements';
 import firebase from '../Firebase';
 import { AuthInput } from '../components/AuthInput';
 import { AuthButton } from '../components/AuthButton';
+import Colors from '../constants/Colors';
 
 export default class ProfileScreen extends React.Component {
 
@@ -15,6 +16,7 @@ export default class ProfileScreen extends React.Component {
         fontWeight: 'bold',
         fontSize:20
       },
+      headerTintColor:Colors.tintColor,
       headerRight: (
         <Button
           buttonStyle={{ padding: 0, backgroundColor: 'transparent' }}

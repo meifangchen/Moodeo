@@ -1,5 +1,6 @@
 import React from 'react';
 import { ScrollView, StyleSheet} from 'react-native';
+import Colors from '../constants/Colors';
 
 import firebase from '../Firebase';
 
@@ -12,7 +13,8 @@ class SettingsScreen extends React.Component {
         justifyContent: 'center',
         fontWeight: 'bold',
         fontSize:20
-      }
+      },
+      headerTintColor:Colors.tintColor
     };
   };
 

@@ -2,10 +2,19 @@ import React, { Component } from 'react';
 import { StyleSheet, ScrollView, ActivityIndicator, View } from 'react-native';
 import { List, ListItem, Text, Card, Button } from 'react-native-elements';
 import firebase from '../Firebase';
+import Colors from '../constants/Colors';
 
 class BoardDetailScreen extends Component {
   static navigationOptions = {
     title: 'Video Item Details',
+    headerTitleStyle: {
+      paddingTop: 0,
+      alignSelf: 'center',
+      justifyContent: 'center',
+      fontWeight: 'bold',
+      fontSize:20
+    },
+    headerTintColor:Colors.tintColor
   };
   constructor() {
     super();

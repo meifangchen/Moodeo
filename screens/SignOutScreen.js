@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text} from 'react-native';
+import Colors from '../constants/Colors';
 export default class SignOutScreen extends React.Component {
     static navigationOptions = {
       title: 'Sign Out',
@@ -7,7 +8,8 @@ export default class SignOutScreen extends React.Component {
         justifyContent: 'center',
         fontWeight: 'bold',
         fontSize:20
-      }
+      },
+      headerTintColor:Colors.tintColor
     };
   
     render() {

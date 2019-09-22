@@ -3,6 +3,7 @@ import { StyleSheet, ScrollView, ActivityIndicator, View, TextInput } from 'reac
 import { Button } from 'react-native-elements';
 import firebase from '../Firebase';
 import { AuthInput } from '../components/AuthInput';
+import Colors from '../constants/Colors';
 
 class EditBoardScreen extends Component {
   static navigationOptions = {
@@ -13,7 +14,8 @@ class EditBoardScreen extends Component {
       justifyContent: 'center',
       fontWeight: 'bold',
       fontSize:20
-    }
+    },
+    headerTintColor:Colors.tintColor
   };
   constructor() {
     super();

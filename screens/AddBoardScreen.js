@@ -5,7 +5,14 @@ import firebase from '../Firebase';
 
 class AddBoardScreen extends Component {
   static navigationOptions = {
-    title: 'Add Shopping Item',
+    title: 'Add Video Item',
+    headerTitleStyle: {
+      paddingTop: 0,
+      alignSelf: 'center',
+      justifyContent: 'center',
+      fontWeight: 'bold',
+      fontSize:20
+    }
   };
   constructor() {
     super();
