@@ -109,3 +109,7 @@ Checked in codebase to github.
   - Deal with videoURL string.
 - 9/16/2019
   - Add hundreds of youtube video key tokens.
+- 9/21/2019
+  - Change header bar style.
+  - Hide header bar.
+  - Edit home page picker style, delete image.
