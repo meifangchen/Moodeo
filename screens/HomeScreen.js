@@ -57,50 +57,32 @@ export default class HomeScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.container} >
-          <View style={styles.welcomeContainer}>
-            <Image
-              source={
-                __DEV__
-                  ? require('../assets/images/welcomePic.png')
-                  : require('../assets/images/welcomePic.png')
-              }
-              style={styles.welcomeImage}
-            />
-          </View>
-        </View>
-        
         <View style={styles.tabBarInfoContainer}>
-        <Text style={styles.tabBarInfoText}>How is your mood?</Text>
+          <Text style={styles.tabBarInfoText}>How is your mood?</Text>
           <Picker
             selectedValue={this.state.foodCategory}
-            style={{height: 200, width: '100%'}}
-            onValueChange={(itemValue, itemIndex) =>
-              this.setState({foodCategory: itemValue})
-            }>
-            <Picker.Item 
-            label="Please select a mood" 
-            value=""
-            style={{color: 'red'}}
+            style={{ height: 100, width: '100%',}} 
+            itemStyle={{fontSize: 30, paddingBottom: 10,paddingTop:30}}
+            onValueChange={(itemValue, itemIndex) =>this.setState({ foodCategory: itemValue })}>
+            <Picker.Item
+              label="Select a mood"
+              value=""
+              color="#00aeef"
             />
-            <Picker.Item label="Do not know" value="none"/>
-            <Picker.Item label="Angry" value="angry"/>
-            <Picker.Item label="Happy" value="happy"/>
-            <Picker.Item label="Lonely" value="lonely"/>
-            <Picker.Item label="Sad" value="sad"/>
-            
-            
+            <Picker.Item label="Angry" fontSize="20" value="angry" />
+            <Picker.Item label="Happy" value="happy" />
+            <Picker.Item label="Lonely" value="lonely" />
+            <Picker.Item label="Sad" value="sad" />
           </Picker>
-          
         </View>
-          <AuthButton 
-            onPress={() => this.recommendVideoByMood()}>Recommend me a video
-          </AuthButton>
-          <Text style={styles.getStartedText}>
+        <View style={styles.buttonContainer} >
+        <AuthButton
+          onPress={() => this.recommendVideoByMood()}>Recommend me a video
+        </AuthButton>
+        </View>
+        <Text style={styles.getStartedText}>
           {this.state.item}
-          </Text>
-
-        
+        </Text>
       </View>
     );
   }
@@ -115,7 +97,9 @@ const styles = StyleSheet.create({
     paddingRight: 20,
     paddingBottom: 40
   },
-
+  buttonContainer: {
+    marginTop:450,
+  },
   welcomeContainer: {
     alignItems: 'center',
     marginTop: 0,
@@ -145,7 +129,7 @@ const styles = StyleSheet.create({
   },
   tabBarInfoContainer: {
     position: 'absolute',
-    height: '30%',
+    height: '50%',
     top: 100,
     left: 0,
     right: 0,
@@ -167,7 +151,7 @@ const styles = StyleSheet.create({
   },
   tabBarInfoText: {
     fontWeight: 'bold',
-    fontSize: 20,
+    fontSize: 38,
     paddingTop: 0,
     color: 'black',
     textAlign: 'center',
