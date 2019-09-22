@@ -114,4 +114,7 @@ Checked in codebase to github.
   - Hide header bar.
   - Edit home page picker style, delete image.
   - Change Authbutton font size.
+- 9/22/2019
+  - Change app theme color.
+  - Add video icon to Moodeo page. (Link to this icon lib: https://ionicons.com/).
   
