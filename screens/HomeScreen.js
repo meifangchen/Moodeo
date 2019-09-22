@@ -20,6 +20,7 @@ export default class HomeScreen extends React.Component {
   static navigationOptions = ({ navigation }) => {
     return {
       title: 'Welcome to Moodeo',
+      header: null,
       headerStyle: {
         backgroundColor: 'white',
       },
