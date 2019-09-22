@@ -77,7 +77,7 @@ export default class HomeScreen extends React.Component {
         </View>
         <View style={styles.buttonContainer} >
         <AuthButton
-          onPress={() => this.recommendVideoByMood()}>Recommend me a video
+          onPress={() => this.recommendVideoByMood()}>Recommend a video
         </AuthButton>
         </View>
         <Text style={styles.getStartedText}>
