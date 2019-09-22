@@ -61,18 +61,19 @@ export default class HomeScreen extends React.Component {
           <Text style={styles.tabBarInfoText}>How is your mood?</Text>
           <Picker
             selectedValue={this.state.foodCategory}
-            style={{ height: 100, width: '100%',}} 
-            itemStyle={{fontSize: 30, paddingBottom: 10,paddingTop:30}}
+            itemTextStyle={{ fontSize: 18, color: 'white' }}
+            style={{ height: 100, width: '100%', paddingTop: 50}} 
+            itemStyle={{fontSize: 30, paddingBottom: 10,paddingTop:30, backgroundColor: 'lightgrey'}}
             onValueChange={(itemValue, itemIndex) =>this.setState({ foodCategory: itemValue })}>
             <Picker.Item
-              label="Select a mood"
+              label="Do not know"
               value=""
               color="#7d3f98"
             />
-            <Picker.Item label="Angry" fontSize="20" value="angry" />
-            <Picker.Item label="Happy" value="happy" />
-            <Picker.Item label="Lonely" value="lonely" />
-            <Picker.Item label="Sad" value="sad" />
+            <Picker.Item label="Angry" textStyle={{fontSize: 202}} value="angry" color="#7d3f98"/>
+            <Picker.Item label="Happy" value="happy" color="#7d3f98"/>
+            <Picker.Item label="Lonely" value="lonely" color="#7d3f98"/>
+            <Picker.Item label="Sad" value="sad" color="#7d3f98"/>
           </Picker>
         </View>
         <View style={styles.buttonContainer} >
@@ -98,7 +99,7 @@ const styles = StyleSheet.create({
     paddingBottom: 40
   },
   buttonContainer: {
-    marginTop:450,
+    marginTop:480,
   },
   welcomeContainer: {
     alignItems: 'center',
@@ -151,7 +152,7 @@ const styles = StyleSheet.create({
   },
   tabBarInfoText: {
     fontWeight: 'bold',
-    fontSize: 38,
+    fontSize: 39,
     paddingTop: 0,
     color: '#7d3f98',
     textAlign: 'center',
