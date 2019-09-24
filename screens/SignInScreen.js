@@ -86,13 +86,13 @@ class SignInScreen extends React.Component {
       return (
         <View style={styles.form}>
           <AuthInput
-            placeholder=''
+            placeholder='Enter your email'
             label='Email:'
             onChangeText={email => this.setState({ email })}
             value={this.state.email}
           />
           <AuthInput
-            placeholder=''
+            placeholder='Enter your password'
             label='Password:'
             secureTextEntry
             onChangeText={password => this.setState({ password })}

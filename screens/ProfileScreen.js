@@ -145,6 +145,7 @@ export default class ProfileScreen extends React.Component {
         <Text style={styles.labelText}>Gender</Text>
           <CheckBox 
             title='Female'
+            textStyle={{fontSize: 20}}
             checkedColor='#7d3f98'
             checkedIcon='dot-circle-o'
             uncheckedIcon='circle-o'
@@ -153,6 +154,7 @@ export default class ProfileScreen extends React.Component {
           />
         <CheckBox
           title='Male'
+          textStyle={{fontSize: 20}}
           checkedColor='#7d3f98'
           checkedIcon='dot-circle-o'
           uncheckedIcon='circle-o'
@@ -180,15 +182,17 @@ export default class ProfileScreen extends React.Component {
         <Text style={styles.labelText}>Do you like pets?</Text>
           <CheckBox 
             title='Yes'
+            textStyle={{fontSize: 20}}
             checkedColor='#7d3f98'
             checkedIcon='dot-circle-o'
             uncheckedIcon='circle-o'
             onPress= {() => this.onYesCheckChange()}
             checked={this.state.yesChecked}
-            fontSize='20'
+           
           />
           <CheckBox 
             title='No'
+            textStyle={{fontSize: 20}}
             checkedColor='#7d3f98'
             checkedIcon='dot-circle-o'
             uncheckedIcon='circle-o'
@@ -198,15 +202,17 @@ export default class ProfileScreen extends React.Component {
         <Text style={styles.labelText}>Video type preferences</Text>
           <CheckBox 
             title='Movie/Show'
+            textStyle={{fontSize: 20}}
             checkedColor='#7d3f98'
             //checkedIcon='dot-circle-o'
             //uncheckedIcon='circle-o'
             onPress= {() => this.onMovieshowCheckChange()}
             checked={this.state.movieshowChecked}
-            fontSize='20'
+            
           />
-          <CheckBox 
+          <CheckBox style={styles.checkBox}
             title='Music'
+            textStyle={{fontSize: 20}}
             checkedColor='#7d3f98'
             //checkedIcon='dot-circle-o'
             //uncheckedIcon='circle-o'
@@ -215,6 +221,7 @@ export default class ProfileScreen extends React.Component {
           />
           <CheckBox 
             title='Comedy'
+            textStyle={{fontSize: 20}}
             checkedColor='#7d3f98'
             //checkedIcon='dot-circle-o'
             //uncheckedIcon='circle-o'
@@ -223,6 +230,7 @@ export default class ProfileScreen extends React.Component {
           />
           <CheckBox 
             title='Educational'
+            textStyle={{fontSize: 20}}
             checkedColor='#7d3f98'
             //checkedIcon='dot-circle-o'
             //uncheckedIcon='circle-o'
@@ -231,6 +239,7 @@ export default class ProfileScreen extends React.Component {
           />
           <CheckBox 
             title='Product Review'
+            textStyle={{fontSize: 20}}
             checkedColor='#7d3f98'
             //checkedIcon='dot-circle-o'
             //uncheckedIcon='circle-o'
@@ -239,6 +248,7 @@ export default class ProfileScreen extends React.Component {
           />
           <CheckBox 
             title='VLog'
+            textStyle={{fontSize: 20}}
             checkedColor='#7d3f98'
             //checkedIcon='dot-circle-o'
             //uncheckedIcon='circle-o'
@@ -247,6 +257,7 @@ export default class ProfileScreen extends React.Component {
           />
           <CheckBox 
             title='Gaming'
+            textStyle={{fontSize: 20}}
             checkedColor='#7d3f98'
             //checkedIcon='dot-circle-o'
             //uncheckedIcon='circle-o'
@@ -282,7 +293,7 @@ const styles = StyleSheet.create({
 
   checkBox: {
     flex: 1,
-    fontSize: 16,
+    fontSize: 28,
     backgroundColor: '#fff',
     paddingBottom: 10,
     flexDirection: 'column',
@@ -292,7 +303,7 @@ const styles = StyleSheet.create({
   labelText: {
     paddingTop: 20,
     paddingBottom: 10,
-    fontSize: 20,
+    fontSize: 28,
     fontWeight: 'bold',
   }
 });
