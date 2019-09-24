@@ -118,3 +118,5 @@ Checked in codebase to github.
   - Change app theme color.
   - Add video icon to Moodeo page. (Link to this icon lib: https://ionicons.com/).
   - Change header title font size.
+- 9/24/2019
+  - Design and update Moodeo application logo.
