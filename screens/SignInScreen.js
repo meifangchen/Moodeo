@@ -101,9 +101,7 @@ class SignInScreen extends React.Component {
           <AuthButton onPress={() => this.onPressSignIn()}>Sign In</AuthButton>
           <Text style={styles.text}>Not a member?</Text>
           <AuthButton 
-          style={styles.signUpButton}
-          onPress={() => { this.props.navigation.navigate('SignUp') 
-          }}>Sign Up</AuthButton>
+          onPress={() => { this.props.navigation.navigate('SignUp')}}>Sign Up</AuthButton>
           <Text style={styles.errorText}
           
           >{this.state.error}</Text>

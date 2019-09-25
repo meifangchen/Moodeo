@@ -85,6 +85,7 @@ class BoardDetailScreen extends Component {
               backgroundColor={'#CCCCCC'}
               leftIcon={{name: 'edit'}}
               title='Edit'
+              textStyle={{fontSize:28}}
               onPress={() => {
                 this.props.navigation.navigate('EditBoard', {
                   boardkey: `${JSON.stringify(this.state.key)}`,
@@ -98,6 +99,7 @@ class BoardDetailScreen extends Component {
               color={'#FFFFFF'}
               leftIcon={{name: 'delete'}}
               title='Delete'
+              textStyle={{fontSize:28}}
               onPress={() => this.deleteBoard(this.state.key)} />
           </View>
         </Card>

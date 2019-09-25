@@ -92,7 +92,7 @@ class EditBoardScreen extends Component {
       <ScrollView style={styles.container}>
         <View style={styles.subContainer}>
           <TextInput
-            style={{fontSize:18}}
+            style={{fontSize:28}}
             multiline={true}
             numberOfLines={4}
             placeholder={'Video Item Name'}
@@ -102,7 +102,7 @@ class EditBoardScreen extends Component {
         </View>
         <View style={styles.subContainer}>
           <TextInput
-            style={{fontSize:18}}
+            style={{fontSize:25}}
             multiline={true}
             numberOfLines={4}
             placeholder={'Notes'}
@@ -112,7 +112,7 @@ class EditBoardScreen extends Component {
         </View>
         <View style={styles.subContainer}>
           <TextInput
-            style={{fontSize:18}}
+            style={{fontSize:25}}
             placeholder={'View date'}
             value={this.state.description}
             onChangeText={(text) => this.updateTextInput(text, 'description')}
@@ -121,8 +121,9 @@ class EditBoardScreen extends Component {
         <View style={styles.button}>
           <Button
             large
-            leftIcon={{name: 'update'}}
+            leftIcon={{name: 'update', fontSize:28}}
             title='Update'
+            textStyle={{fontSize:28}}
             backgroundColor={'#7d3f98'}
             onPress={() => this.updateBoard()} />
         </View>

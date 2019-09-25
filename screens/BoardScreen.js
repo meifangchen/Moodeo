@@ -71,7 +71,8 @@ class BoardScreen extends Component {
                 textStyle={{fontSize:30}}
                 key={i}
                 title={item.title}
-                leftIcon={{name: 'tag', type: 'font-awesome', color:'#7d3f98'}}
+                titleStyle={{fontSize:25}}
+                leftIcon={{name: 'tag', type: 'font-awesome', color:'#7d3f98', size: 28}}
                 onPress={() => {
                   this.props.navigation.navigate('BoardDetails', {
                     boardkey: `${JSON.stringify(item.key)}`,
