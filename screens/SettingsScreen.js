@@ -33,7 +33,7 @@ class SettingsScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 15,
+    paddingTop: 215,
     backgroundColor: '#fff',
   },
 });
