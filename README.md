@@ -2,7 +2,7 @@
 Create a mood-oriented recommender targeted for older adults.
 
 #Setup Environment
--Start issue: if Metro Bundle can start on certain port in the localhost but still cannot build and send the link to the mobile phone. SOLUTION: enter "expo publish" and log in expo with username: meifang417@gmail.com and pass:pxxxxxxx (Link: https://forums.expo.io/t/tunnel-url-not-found-failed-back-to-lan-url/14380/5 )
+-Start issue: if Metro Bundle can start on certain port in the localhost but still cannot build and send the link to the mobile phone. SOLUTION: enter "expo publish" and log in expo with username: m......7@gmail.com and pass:pxxxxxxx (Link: https://forums.expo.io/t/tunnel-url-not-found-failed-back-to-lan-url/14380/5 )
 
 -Steps of starting application: npm start (or expo start) -> login expo via cell phone -> send link to cell phone in localhost:xxxxx, connection: Tunnel, under the same network environment (either both platforms are WIFI or Cellular) 
 
