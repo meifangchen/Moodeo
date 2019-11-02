@@ -121,4 +121,3 @@ Checked in codebase to github.
 - 9/24/2019
   - Design and update Moodeo application logo.
   - Change video list screen font and button sze.
-  - Style sign out button.
