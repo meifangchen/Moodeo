@@ -39,6 +39,7 @@ export default class MoodeoAngry2Screen extends React.Component {
     return (
       <View style={styles.container}>    
         <WebView 
+          useWebKit={true}
           style={StyleSheet.container}
           javaScriptEnabled={true}
           source={{ html: this.state.videoURL }}

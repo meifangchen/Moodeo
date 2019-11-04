@@ -40,6 +40,7 @@ export default class MoodeoLonely2Screen extends React.Component {
       <View style={styles
       .container}>    
         <WebView 
+          useWebKit={true}
           style={StyleSheet.container}
           javaScriptEnabled={true}
           source={{ html: this.state.videoURL }}

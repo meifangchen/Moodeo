@@ -121,3 +121,8 @@ Checked in codebase to github.
 - 9/24/2019
   - Design and update Moodeo application logo.
   - Change video list screen font and button sze.
+- 11/03/2019
+  - Fix WebView cannot display YouTube videos issue and upgrade expo sdk from 32 to 33 due to expo client 33.
+   https://github.com/expo/expo/issues/5864
+   https://docs.expo.io/versions/latest/workflow/upgrading-expo-sdk-walkthrough/
+   

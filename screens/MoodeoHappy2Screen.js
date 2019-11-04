@@ -38,7 +38,8 @@ export default class MoodeoHappy2Screen extends React.Component {
   render() {
     return (
       <View style={styles.container}>     
-        <WebView 
+        <WebView
+          useWebKit={true} 
           style={StyleSheet.container}
           javaScriptEnabled={true}
           source={{ html: this.state.videoURL }}
