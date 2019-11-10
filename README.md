@@ -127,3 +127,4 @@ Checked in codebase to github.
    https://docs.expo.io/versions/latest/workflow/upgrading-expo-sdk-walkthrough/
 - 11/10/2019 
   - Edit screen button style.
+  - Add validate video feature for happy mood.

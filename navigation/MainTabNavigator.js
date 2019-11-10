@@ -12,6 +12,7 @@ import MoodeoLonely1Screen from '../screens/MoodeoLonely1Screen';
 import MoodeoLonely2Screen from '../screens/MoodeoLonely2Screen';
 import MoodeoSad1Screen from '../screens/MoodeoSad1Screen';
 import MoodeoSad2Screen from '../screens/MoodeoSad2Screen';
+import VaidateVideoScreen from '../screens/VaidateVideoScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import BoardScreen from '../screens/BoardScreen';
 import BoardDetailScreen from '../screens/BoardDetailScreen';
@@ -52,7 +53,9 @@ const MoodeoStack = createStackNavigator({
   MoodeoLonely1Screen: MoodeoLonely1Screen,
   MoodeoLonely2Screen: MoodeoLonely2Screen,
   MoodeoSad1Screen: MoodeoSad1Screen,
-  MoodeoSad2Screen: MoodeoSad2Screen
+  MoodeoSad2Screen: MoodeoSad2Screen,
+  VaidateVideoScreen: VaidateVideoScreen,
+  HomeScreen: HomeScreen
 });
 
 MoodeoStack.navigationOptions = {

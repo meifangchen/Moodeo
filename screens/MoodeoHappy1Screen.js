@@ -46,7 +46,7 @@ export default class MoodeoHappy1Screen extends React.Component {
         />
         <View style={styles.buttoncontainer}>
           <AuthButton 
-            onPress={() => {this.props.navigation.push('MoodeoHappy2Screen');}}>Next video
+            onPress={() => {this.props.navigation.push('VaidateVideoScreen');}}>Validate this video
           </AuthButton>
         </View>
       </View> 
