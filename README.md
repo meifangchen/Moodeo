@@ -128,3 +128,8 @@ Checked in codebase to github.
 - 11/10/2019 
   - Edit screen button style.
   - Add validate video feature for happy mood.
+- 11/16/2019
+  - Implement video validation and save result to firebase.
+    Firebase URL: https://console.firebase.google.com/u/1/project/foodmanager-4af3d/database/firestore/data~2FvideoValidationResult~2FBj2Q0e12tjoq7N9z4WJs
+
+    Reference: https://www.djamware.com/post/5bbcd38080aca7466989441b/react-native-firebase-tutorial-build-crud-firestore-app
