@@ -13,8 +13,11 @@ class BoardScreen extends Component {
         alignSelf: 'center',
         justifyContent: 'center',
         fontWeight: 'bold',
-        fontSize:25
+        fontSize:25,
       },
+      headerStyle: {
+        borderBottomWidth: 0,
+    },
       headerTintColor:Colors.tintColor,
       headerRight: (
         <Button

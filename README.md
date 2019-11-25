@@ -135,3 +135,5 @@ Checked in codebase to github.
     Reference: https://www.djamware.com/post/5bbcd38080aca7466989441b/react-native-firebase-tutorial-build-crud-firestore-app
 - 11/24/2019
   - Refine alert message logic for clicking the submit button in Validate Video page.
+  - Remove border below the header.
+    Reference: https://github.com/react-navigation/react-navigation/issues/865
