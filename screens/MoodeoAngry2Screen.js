@@ -31,6 +31,9 @@ export default class MoodeoAngry2Screen extends React.Component {
         fontWeight: 'bold',
         fontSize:25
       },
+      headerStyle: {
+        borderBottomWidth: 0,
+      },
       headerTintColor:Colors.tintColor
     };
   };
