@@ -133,3 +133,5 @@ Checked in codebase to github.
     Firebase URL: https://console.firebase.google.com/u/1/project/foodmanager-4af3d/database/firestore/data~2FvideoValidationResult~2FBj2Q0e12tjoq7N9z4WJs
 
     Reference: https://www.djamware.com/post/5bbcd38080aca7466989441b/react-native-firebase-tutorial-build-crud-firestore-app
+- 11/24/2019
+  - Refine alert message logic for clicking the submit button in Validate Video page.

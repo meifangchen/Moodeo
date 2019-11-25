@@ -34,17 +34,19 @@ class VaidateVideoScreen extends React.Component {
   }
 
   validateFeekBack = () => {
-    const data = 'We have received your feedback, thanks!';
-      alert(data);
-
       this.setState({
         isLoading: true,
       });
       if(this.state.yesChecked){
         this.state.isValid =true
+        var data = 'We have received your feedback, thanks!';   
       } else if(this.state.noChecked){
         this.state.isValid=false
+        var data = 'We have received your feedback, thanks!';
+      } else {
+        var data = 'Please select an answer, thanks!'
       }
+      alert(data);
       this.ref.add({
         isValid: this.state.isValid
       }).then((docRef) => {
