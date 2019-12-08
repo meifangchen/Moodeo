@@ -6,7 +6,7 @@ import Colors from '../constants/Colors';
 
 class BoardDetailScreen extends Component {
   static navigationOptions = {
-    title: 'Video Item Details',
+    title: 'Result Details',
     headerTitleStyle: {
       paddingTop: 0,
       alignSelf: 'center',
@@ -26,7 +26,7 @@ class BoardDetailScreen extends Component {
   }
   componentDidMount() {
     const { navigation } = this.props;
-    const ref = firebase.firestore().collection('boards').doc(JSON.parse(navigation.getParam('boardkey')));
+    const ref = firebase.firestore().collection('videoValidationResult').doc(JSON.parse(navigation.getParam('boardkey')));
     ref.get().then((doc) => {
       if (doc.exists) {
         this.setState({
@@ -44,7 +44,7 @@ class BoardDetailScreen extends Component {
     this.setState({
       isLoading: true
     });
-    firebase.firestore().collection('boards').doc(key).delete().then(() => {
+    firebase.firestore().collection('videoValidationResult').doc(key).delete().then(() => {
       console.log("Document successfully deleted!");
       this.setState({
         isLoading: false
@@ -70,16 +70,11 @@ class BoardDetailScreen extends Component {
         <Card style={styles.container}>
           <View style={styles.subContainer}>
             <View>
-              <Text h3>{this.state.board.title}</Text>
-            </View>
-            <View>
-              <Text h3>{this.state.board.description}</Text>
-            </View>
-            <View>
-              <Text h3>{this.state.board.author}</Text>
+              <Text h2>Is this video fit your current mood?</Text>
+              <Text style={styles.cardText}>Your answer: {this.state.board.isValid == true? 'Yes': 'No'}</Text>
             </View>
           </View>
-          <View style={styles.detailButton}>
+         {/* <View style={styles.detailButton}>
             <Button
               large
               backgroundColor={'#CCCCCC'}
@@ -101,7 +96,7 @@ class BoardDetailScreen extends Component {
               title='Delete'
               textStyle={{fontSize:28}}
               onPress={() => this.deleteBoard(this.state.key)} />
-          </View>
+          </View> */}
         </Card>
       </ScrollView>
     );
@@ -117,6 +112,10 @@ const styles = StyleSheet.create({
     paddingBottom: 20,
     borderBottomWidth: 2,
     borderBottomColor: '#CCCCCC',
+  },
+  cardText: {
+    fontSize: 28,
+    paddingTop:20
   },
   activity: {
     position: 'absolute',

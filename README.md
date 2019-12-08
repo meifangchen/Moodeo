@@ -137,3 +137,5 @@ Checked in codebase to github.
   - Refine alert message logic for clicking the submit button in Validate Video page.
   - Remove border below the header for mood screens and video list screen.
     Reference: https://github.com/react-navigation/react-navigation/issues/865
+- 12/07/2019
+  - Display video validation result that is stored in the firebase collection called videoValidationResult.

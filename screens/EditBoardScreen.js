@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { StyleSheet, ScrollView, ActivityIndicator, View, TextInput } from 'react-native';
 import { Button } from 'react-native-elements';
 import firebase from '../Firebase';
-import { AuthInput } from '../components/AuthInput';
 import Colors from '../constants/Colors';
 
 class EditBoardScreen extends Component {
@@ -22,22 +21,18 @@ class EditBoardScreen extends Component {
     this.state = {
       key: '',
       isLoading: true,
-      title: '',
-      description: '',
-      author: ''
+      isValid: false
     };
   }
   componentDidMount() {
     const { navigation } = this.props;
-    const ref = firebase.firestore().collection('boards').doc(JSON.parse(navigation.getParam('boardkey')));
+    const ref = firebase.firestore().collection('videoValidationResult').doc(JSON.parse(navigation.getParam('boardkey')));
     ref.get().then((doc) => {
       if (doc.exists) {
         const board = doc.data();
         this.setState({
           key: doc.id,
-          title: board.title,
-          description: board.description,
-          author: board.author,
+          isValid: board.isValid,
           isLoading: false
         });
       } else {
@@ -57,17 +52,13 @@ class EditBoardScreen extends Component {
       isLoading: true,
     });
     const { navigation } = this.props;
-    const updateRef = firebase.firestore().collection('boards').doc(this.state.key);
+    const updateRef = firebase.firestore().collection('videoValidationResult').doc(this.state.key);
     updateRef.set({
-      title: this.state.title,
-      description: this.state.description,
-      author: this.state.author,
+      isValid: this.state.isValid,
     }).then((docRef) => {
       this.setState({
         key: '',
-        title: '',
-        description: '',
-        author: '',
+        isValid: false,
         isLoading: false,
       });
       this.props.navigation.navigate('Board');
@@ -95,27 +86,9 @@ class EditBoardScreen extends Component {
             style={{fontSize:28}}
             multiline={true}
             numberOfLines={4}
-            placeholder={'Video Item Name'}
-            value={this.state.title}
-            onChangeText={(text) => this.updateTextInput(text, 'title')}
-          />
-        </View>
-        <View style={styles.subContainer}>
-          <TextInput
-            style={{fontSize:25}}
-            multiline={true}
-            numberOfLines={4}
-            placeholder={'Notes'}
-            value={this.state.author}
-            onChangeText={(text) => this.updateTextInput(text, 'author')}
-            />
-        </View>
-        <View style={styles.subContainer}>
-          <TextInput
-            style={{fontSize:25}}
-            placeholder={'View date'}
-            value={this.state.description}
-            onChangeText={(text) => this.updateTextInput(text, 'description')}
+            placeholder={'Is a valid video'}
+            value={this.state.isValid}
+            onChangeText={(text) => this.updateTextInput(text, 'isValid')}
           />
         </View>
         <View style={styles.button}>

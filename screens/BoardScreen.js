@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { StyleSheet, ScrollView, ActivityIndicator, View, Text } from 'react-native';
-import { List, ListItem, Button, Icon } from 'react-native-elements';
+import { List, ListItem, Button, Icon, Card } from 'react-native-elements';
 import firebase from '../Firebase';
 import Colors from '../constants/Colors';
 
 class BoardScreen extends Component {
   static navigationOptions = ({ navigation }) => {
     return {
-      title: 'Video List',
+      title: 'Validation result',
       headerTitleStyle: {
         paddingTop: 0,
         alignSelf: 'center',
@@ -30,7 +30,7 @@ class BoardScreen extends Component {
   };
   constructor() {
     super();
-    this.ref = firebase.firestore().collection('boards');
+    this.ref = firebase.firestore().collection('videoValidationResult');
     this.unsubscribe = null;
     this.state = {
       isLoading: true,
@@ -43,13 +43,11 @@ class BoardScreen extends Component {
   onCollectionUpdate = (querySnapshot) => {
     const boards = [];
     querySnapshot.forEach((doc) => {
-      const { title, description, author } = doc.data();
+      const {isValid} = doc.data();
       boards.push({
         key: doc.id,
         doc, // DocumentSnapshot
-        title,
-        description,
-        author,
+        isValid
       });
     });
     this.setState({
@@ -67,13 +65,14 @@ class BoardScreen extends Component {
     }
     return (
       <ScrollView style={styles.container}>
+        <Card style={styles.cardContainer}>
         <List>
           {
             this.state.boards.map((item, i) => (
               <ListItem
                 textStyle={{fontSize:30}}
                 key={i}
-                title={item.title}
+                title={JSON.stringify(item.key) !=="" ? 'Video '+(i+1):i}
                 titleStyle={{fontSize:25}}
                 leftIcon={{name: 'tag', type: 'font-awesome', color:'#7d3f98', size: 28}}
                 onPress={() => {
@@ -85,6 +84,7 @@ class BoardScreen extends Component {
             ))
           }
         </List>
+        </Card>
       </ScrollView>
     );
   }
@@ -94,6 +94,10 @@ const styles = StyleSheet.create({
   container: {
    flex: 1,
    paddingBottom: 22
+  },
+  cardContainer: {
+    flex: 1,
+    padding: 20
   },
   item: {
     padding: 10,

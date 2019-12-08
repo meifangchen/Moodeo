@@ -100,7 +100,7 @@ const ShoppingListStack = createStackNavigator({
 );
 
 ShoppingListStack.navigationOptions = {
-  tabBarLabel: 'Video List',
+  tabBarLabel: 'Result',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
