@@ -7,7 +7,7 @@ import Colors from '../constants/Colors';
 class BoardScreen extends Component {
   static navigationOptions = ({ navigation }) => {
     return {
-      title: 'Validation result',
+      title: 'Result',
       headerTitleStyle: {
         paddingTop: 0,
         alignSelf: 'center',
@@ -30,12 +30,17 @@ class BoardScreen extends Component {
   };
   constructor() {
     super();
-    this.ref = firebase.firestore().collection('videoValidationResult');
-    this.unsubscribe = null;
     this.state = {
       isLoading: true,
-      boards: []
+      boards: [],
+      totalRecord: 0 //count total records of videoValidationResult table in firebase
     };
+    this.ref = firebase.firestore().collection('videoValidationResult');
+    this.ref.get().then(snap => {
+      this.state.totalRecord = snap.size // will return the collection size
+   });
+    this.unsubscribe = null;
+
   }
   componentDidMount() {
     this.unsubscribe = this.ref.onSnapshot(this.onCollectionUpdate);
@@ -52,7 +57,7 @@ class BoardScreen extends Component {
     });
     this.setState({
       boards,
-      isLoading: false,
+      isLoading: false
    });
   }
   render() {
@@ -65,6 +70,11 @@ class BoardScreen extends Component {
     }
     return (
       <ScrollView style={styles.container}>
+        <Card style={styles.cardContainer}>
+          <View>
+            <Text style={styles.cardText}>Total count of validated videos: {this.state.totalRecord}</Text>
+          </View>
+        </Card>
         <Card style={styles.cardContainer}>
         <List>
           {
@@ -98,6 +108,9 @@ const styles = StyleSheet.create({
   cardContainer: {
     flex: 1,
     padding: 20
+  },
+  cardText: {
+    fontSize: 25,
   },
   item: {
     padding: 10,

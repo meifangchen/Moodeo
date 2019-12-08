@@ -139,3 +139,4 @@ Checked in codebase to github.
     Reference: https://github.com/react-navigation/react-navigation/issues/865
 - 12/07/2019
   - Display video validation result that is stored in the firebase collection called videoValidationResult.
+  - Add total record of validated videos in Result screen.
