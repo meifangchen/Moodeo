@@ -33,22 +33,38 @@ class BoardScreen extends Component {
     this.state = {
       isLoading: true,
       boards: [],
-      totalRecord: 0 //count total records of videoValidationResult table in firebase
+      totalRecord: 0, //count total records of videoValidationResult table in firebase
+      numOfValidRecord: 0,
+      numOfInvalidRecord: 0
     };
     this.ref = firebase.firestore().collection('videoValidationResult');
-    this.ref.get().then(snap => {
-      this.state.totalRecord = snap.size // will return the collection size
-   });
+  //   this.ref.get() //get all content from your node ref, it will return a promise
+  //   .then(snap => { // then get the snapshot which contains an array of objects
+  //     this.state.totalRecord = snap.size // will return the collection size
+  //  });
+    
     this.unsubscribe = null;
-
   }
+
   componentDidMount() {
     this.unsubscribe = this.ref.onSnapshot(this.onCollectionUpdate);
   }
   onCollectionUpdate = (querySnapshot) => {
     const boards = [];
+    this.state.totalRecord = querySnapshot.size
+    var countValidRec = 0 //Need to use this temperary variable to store the total records retrived from firebase database. Everytime when
+    var countInvalidRec = 0 //the table(collection) is updated, it needs to be reset to 0 and retrieve the record
     querySnapshot.forEach((doc) => {
       const {isValid} = doc.data();
+      if(isValid === true) {
+        countValidRec = countValidRec + 1
+        this.state.numOfValidRecord = countValidRec
+      } 
+      if(isValid === false) {
+        countInvalidRec = countInvalidRec + 1
+        this.state.numOfInvalidRecord = countInvalidRec
+      }
+      
       boards.push({
         key: doc.id,
         doc, // DocumentSnapshot
@@ -57,7 +73,9 @@ class BoardScreen extends Component {
     });
     this.setState({
       boards,
-      isLoading: false
+      isLoading: false,
+      numOfValidRecord:this.state.numOfValidRecord,
+      numOfInvalidRecord: this.state.numOfInvalidRecord
    });
   }
   render() {
@@ -72,7 +90,9 @@ class BoardScreen extends Component {
       <ScrollView style={styles.container}>
         <Card style={styles.cardContainer}>
           <View>
-            <Text style={styles.cardText}>Total count of validated videos: {this.state.totalRecord}</Text>
+            <Text style={styles.cardText}>Total validated videos: {this.state.totalRecord}</Text>
+            <Text style={styles.cardText}>Valid videos: {this.state.numOfValidRecord}</Text>
+            <Text style={styles.cardText}>Invalid videos: {this.state.numOfInvalidRecord}</Text>
           </View>
         </Card>
         <Card style={styles.cardContainer}>

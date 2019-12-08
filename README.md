@@ -140,3 +140,6 @@ Checked in codebase to github.
 - 12/07/2019
   - Display video validation result that is stored in the firebase collection called videoValidationResult.
   - Add total record of validated videos in Result screen.
+- 12/08/2019 
+  - Improve adding total record of validated videos feature.
+  - Implement showing number of both valid and invali videos in Result screen.
