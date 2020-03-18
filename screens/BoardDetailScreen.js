@@ -70,7 +70,7 @@ class BoardDetailScreen extends Component {
         <Card style={styles.container}>
           <View style={styles.subContainer}>
             <View>
-              <Text h2>Is this video fit your current mood?</Text>
+              <Text h2>Does this video fit your current mood?</Text>
               <Text style={styles.cardText}>Your answer: {this.state.board.isValid == true? 'Yes': 'No'}</Text>
             </View>
           </View>

@@ -76,7 +76,7 @@ export default class ProfileScreen extends React.Component {
     });
 }
 
-  onMovieshowCheckChange() {
+  onReligiousCheckChange() {
     this.setState({
       movieshowChecked: !this.state.movieshowChecked,
     });
@@ -169,13 +169,13 @@ export default class ProfileScreen extends React.Component {
         />
         <AuthInput
           placeholder=''
-          label='What is your hobby?'
+          label='What are your hobbies?'
           onChangeText={hobby => this.setState({ hobby })}
           value={this.state.hobby}
         />
         <AuthInput
           placeholder=''
-          label='What language do you speak?'
+          label='Which languages do you speak?'
           onChangeText={language => this.setState({ language })}
           value={this.state.language}
         />
@@ -199,17 +199,7 @@ export default class ProfileScreen extends React.Component {
             onPress= {() => this.onNoCheckChange()}
             checked={this.state.noChecked}
           />
-        <Text style={styles.labelText}>Video type preferences</Text>
-          <CheckBox 
-            title='Movie/Show'
-            textStyle={{fontSize: 20}}
-            checkedColor='#7d3f98'
-            //checkedIcon='dot-circle-o'
-            //uncheckedIcon='circle-o'
-            onPress= {() => this.onMovieshowCheckChange()}
-            checked={this.state.movieshowChecked}
-            
-          />
+        <Text style={styles.labelText}>Video content type preferences</Text>
           <CheckBox style={styles.checkBox}
             title='Music'
             textStyle={{fontSize: 20}}
@@ -263,6 +253,16 @@ export default class ProfileScreen extends React.Component {
             //uncheckedIcon='circle-o'
             onPress= {() => this.gamingCheckChange()}
             checked={this.state.gamingChecked}
+          />
+          <CheckBox 
+            title='Movie/Show'
+            textStyle={{fontSize: 20}}
+            checkedColor='#7d3f98'
+            //checkedIcon='dot-circle-o'
+            //uncheckedIcon='circle-o'
+            onPress= {() => this.onReligiousCheckChange()}
+            checked={this.state.movieshowChecked}
+            
           />
         <AuthButton onPress={() => this.onPressSave()}>Save</AuthButton>
         <AuthButton onPress={() => this.onPressCancel()}>Cancel</AuthButton>

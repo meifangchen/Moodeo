@@ -6,12 +6,12 @@ import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import MoodeoHappy1Screen from '../screens/MoodeoHappy1Screen';
 import MoodeoHappy2Screen from '../screens/MoodeoHappy2Screen';
-import MoodeoAngry1Screen from '../screens/MoodeoAngry1Screen';
-import MoodeoAngry2Screen from '../screens/MoodeoAngry2Screen';
-import MoodeoLonely1Screen from '../screens/MoodeoLonely1Screen';
-import MoodeoLonely2Screen from '../screens/MoodeoLonely2Screen';
-import MoodeoSad1Screen from '../screens/MoodeoSad1Screen';
-import MoodeoSad2Screen from '../screens/MoodeoSad2Screen';
+import MoodeoRelaxed1Screen from '../screens/MoodeoRelaxed1Screen';
+import MoodeoRelaxed2Screen from '../screens/MoodeoRelaxed2Screen';
+import MoodeoLively1Screen from '../screens/MoodeoLively1Screen';
+import MoodeoLively2Screen from '../screens/MoodeoLively2Screen';
+import MoodeoCalm1Screen from '../screens/MoodeoCalm1Screen';
+import MoodeoCalm2Screen from '../screens/MoodeoCalm2Screen';
 import VaidateVideoScreen from '../screens/VaidateVideoScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import BoardScreen from '../screens/BoardScreen';
@@ -48,12 +48,12 @@ HomeStack.navigationOptions = {
 const MoodeoStack = createStackNavigator({
   MoodeoHappy1Screen: MoodeoHappy1Screen,
   MoodeoHappy2Screen: MoodeoHappy2Screen,
-  MoodeoAngry1Screen: MoodeoAngry1Screen,
-  MoodeoAngry2Screen: MoodeoAngry2Screen,
-  MoodeoLonely1Screen: MoodeoLonely1Screen,
-  MoodeoLonely2Screen: MoodeoLonely2Screen,
-  MoodeoSad1Screen: MoodeoSad1Screen,
-  MoodeoSad2Screen: MoodeoSad2Screen,
+  MoodeoRelaxed1Screen: MoodeoRelaxed1Screen,
+  MoodeoRelaxed2Screen: MoodeoRelaxed2Screen,
+  MoodeoLively1Screen: MoodeoLively1Screen,
+  MoodeoLively2Screen: MoodeoLively2Screen,
+  MoodeoCalm1Screen: MoodeoCalm1Screen,
+  MoodeoCalm2Screen: MoodeoCalm2Screen,
   VaidateVideoScreen: VaidateVideoScreen,
   HomeScreen: HomeScreen
 });

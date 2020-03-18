@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "testNavigation",
-    "slug": "testNavigation",
+    "name": "Moodeo_testSession1",
+    "slug": "prototype",
     "privacy": "public",
     "sdkVersion": "33.0.0",
     "platforms": [
@@ -24,6 +24,7 @@
     ],
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "description": ""
   }
 }

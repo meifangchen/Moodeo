@@ -8,7 +8,7 @@ import {
 import {AuthButton} from '../components/AuthButton';
 import Colors from '../constants/Colors';
 
-export default class MoodeoHappy1Screen extends React.Component {
+export default class MoodeoCalm1Screen extends React.Component {
   state = {
     width: Dimensions.get('window').width,
     height: Dimensions.get('window').height,
