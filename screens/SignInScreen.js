@@ -60,7 +60,7 @@ class SignInScreen extends React.Component {
           <AuthInput
             placeholder='Enter your password...'
             label='Password'
-            
+            secureTextEntry
             onChangeText={password => this.setState({ password })}
             value={this.state.password}
           />
