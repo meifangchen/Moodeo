@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, ScrollView, StyleSheet} from 'react-native';
+import {Alert,Text, ScrollView, StyleSheet} from 'react-native';
 import {CheckBox} from 'react-native-elements';
 import Colors from '../constants/Colors';
 import {AuthButton} from '../components/AuthButton';
@@ -39,14 +39,16 @@ class VaidateVideoScreen extends React.Component {
       });
       if(this.state.yesChecked){
         this.state.isValid =true
-        var data = 'We have received your feedback, thanks!';   
+        var data = 'Thanks for your feedback!';   
       } else if(this.state.noChecked){
         this.state.isValid=false
-        var data = 'We have received your feedback, thanks!';
+        var data = 'Thanks for your feedback!';
       } else {
         var data = 'Please select an answer, thanks!'
       }
-      alert(data);
+      Alert.alert(
+        data
+      );
       this.ref.add({
         isValid: this.state.isValid
       }).then((docRef) => {
