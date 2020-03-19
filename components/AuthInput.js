@@ -29,8 +29,8 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     paddingBottom: 10,
     color: '#333',
-    fontSize: 28,
-    fontWeight: '700',
+    fontSize: 25,
+    fontWeight: '600',
     width: '100%',
   },
   input: {
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     paddingLeft: 5,
     paddingBottom: 10,
     color: '#333',
-    fontSize: 28,
+    fontSize: 22,
     width: '100%',
   }
 });
