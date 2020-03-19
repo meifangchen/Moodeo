@@ -132,17 +132,38 @@ ShoppingListStack.navigationOptions = {
   },
 };
 
-const ProfileStack = createStackNavigator({
-  Profile: ProfileScreen,
+// const ProfileStack = createStackNavigator({
+//   Profile: ProfileScreen,
+//   Settings: SettingsScreen,
+// });
+
+const SettingsStack = createStackNavigator({
   Settings: SettingsScreen,
 });
 
-ProfileStack.navigationOptions = {
-  tabBarLabel: 'Profile',
+// ProfileStack.navigationOptions = {
+//   tabBarLabel: 'Profile',
+//   tabBarIcon: ({ focused }) => (
+//     <TabBarIcon
+//       focused={focused}
+//       name={Platform.OS === 'ios' ? 'ios-contact' : 'md-contact'}
+//     />
+//   ),
+//   tabBarOptions: {
+//     activeTintColor: '#7d3f98',
+//     inactiveTintColor: 'gray',
+//     labelStyle: {
+//       fontSize: 16,
+//     },
+//   },
+// };
+
+SettingsStack.navigationOptions = {
+  tabBarLabel: 'Settings',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-contact' : 'md-contact'}
+      name={Platform.OS === 'ios' ? 'ios-settings' : 'md-settings'}
     />
   ),
   tabBarOptions: {
@@ -158,5 +179,6 @@ export default createBottomTabNavigator({
   HomeStack,
   MoodeoStack,
   ShoppingListStack,
-  ProfileStack,
+  //ProfileStack,
+  SettingsStack
 });
