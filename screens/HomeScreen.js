@@ -66,7 +66,7 @@ export default class HomeScreen extends React.Component {
     return (
       <View style={styles.container}>
         <View style={styles.tabBarInfoContainer}>
-          <Text style={styles.tabBarInfoText}>How is your mood?</Text>
+          <Text style={styles.tabBarInfoText}>How are you?</Text>
           <Picker
             selectedValue={this.state.foodCategory}
             itemTextStyle={{ fontSize: 18, color: 'white' }}
