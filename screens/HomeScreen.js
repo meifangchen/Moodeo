@@ -89,9 +89,9 @@ export default class HomeScreen extends React.Component {
           </Picker>
         </View>
         <View style={styles.buttonContainer} >
-        <AuthButton
-          onPress={() => this.recommendVideoByMood()}>Recommend a video
-        </AuthButton>
+          <AuthButton
+            onPress={() => this.recommendVideoByMood()}>Recommend a video
+          </AuthButton>
         </View>
         <Text style={styles.getStartedText}>
           {this.state.item}
@@ -104,7 +104,6 @@ export default class HomeScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
     padding: 0,
     paddingLeft: 20,
     paddingRight: 20,
@@ -112,27 +111,6 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     marginTop:410,
-  },
-  welcomeContainer: {
-    alignItems: 'center',
-    marginTop: 0,
-    marginBottom: 0,
-  },
-  welcomeImage: {
-    width: '80%',
-    height: 80,
-    top: 5,
-    paddingTop: 0,
-    resizeMode: 'contain',
-    marginTop: 3,
-    marginLeft: -10,
-  },
-  getStartedContainer: {
-    alignItems: 'center',
-    marginHorizontal: 50,
-  },
-  homeScreenFilename: {
-    marginVertical: 7,
   },
   getStartedText: {
     fontSize: 20,
