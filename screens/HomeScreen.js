@@ -45,11 +45,19 @@ export default class HomeScreen extends React.Component {
   recommendVideoByMood() {
     moodValue = this.state.foodCategory;
     if(moodValue == 'relaxed') {
-      this.props.navigation.push('MoodeoRelaxed2Screen')
+      this.props.navigation.push('MoodeoRelaxed1Screen')
     } else if(moodValue == 'lively') {
       this.props.navigation.push('MoodeoLively1Screen')
     } else if(moodValue == 'calm') {
       this.props.navigation.push('MoodeoCalm1Screen')
+    } else if(moodValue == 'annoyed') {
+      this.props.navigation.push('MoodeoAnnoyed1Screen')
+    } else if(moodValue == 'sad') {
+      this.props.navigation.push('MoodeoSad1Screen')
+    } else if (moodValue == 'bored') {
+      this.props.navigation.push('MoodeoBored1Screen')
+    } else if (moodValue == 'nervous') {
+      this.props.navigation.push('MoodeoNervous1Screen')
     } else {
       this.props.navigation.push('MoodeoHappy1Screen')
     }
@@ -70,10 +78,14 @@ export default class HomeScreen extends React.Component {
               value=""
               color="#7d3f98"
             />
-            <Picker.Item label="Relaxed" textStyle={{fontSize: 202}} value="relaxed" color="#7d3f98"/>
             <Picker.Item label="Happy" value="happy" color="#7d3f98"/>
             <Picker.Item label="Lively" value="lively" color="#7d3f98"/>
             <Picker.Item label="Calm" value="calm" color="#7d3f98"/>
+            <Picker.Item label="Relaxed" value="relaxed" color="#7d3f98"/>
+            <Picker.Item label="Nervous" value="nervous" color="#7d3f98"/>
+            <Picker.Item label="Annoyed" value="annoyed" color="#7d3f98"/>
+            <Picker.Item label="Bored" value="bored" color="#7d3f98"/>
+            <Picker.Item label="Sad" value="sad" color="#7d3f98"/>
           </Picker>
         </View>
         <View style={styles.buttonContainer} >

@@ -12,6 +12,14 @@ import MoodeoLively1Screen from '../screens/MoodeoLively1Screen';
 import MoodeoLively2Screen from '../screens/MoodeoLively2Screen';
 import MoodeoCalm1Screen from '../screens/MoodeoCalm1Screen';
 import MoodeoCalm2Screen from '../screens/MoodeoCalm2Screen';
+import MoodeoNervous2Screen from '../screens/MoodeoNervous2Screen';
+import MoodeoNervous1Screen from '../screens/MoodeoNervous1Screen';
+import MoodeoSad2Screen from '../screens/MoodeoSad2Screen';
+import MoodeoSad1Screen from '../screens/MoodeoSad1Screen';
+import MoodeoBored2Screen from '../screens/MoodeoBored2Screen';
+import MoodeoBored1Screen from '../screens/MoodeoBored1Screen';
+import MoodeoAnnoyed2Screen from '../screens/MoodeoAnnoyed2Screen';
+import MoodeoAnnoyed1Screen from '../screens/MoodeoAnnoyed1Screen';
 import VaidateVideoScreen from '../screens/VaidateVideoScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import BoardScreen from '../screens/BoardScreen';
@@ -54,6 +62,14 @@ const MoodeoStack = createStackNavigator({
   MoodeoLively2Screen: MoodeoLively2Screen,
   MoodeoCalm1Screen: MoodeoCalm1Screen,
   MoodeoCalm2Screen: MoodeoCalm2Screen,
+  MoodeoNervous2Screen: MoodeoNervous2Screen,
+  MoodeoNervous1Screen: MoodeoNervous1Screen,
+  MoodeoSad2Screen: MoodeoSad2Screen,
+  MoodeoSad1Screen: MoodeoSad1Screen,
+  MoodeoBored2Screen: MoodeoBored2Screen,
+  MoodeoBored1Screen: MoodeoBored1Screen,
+  MoodeoAnnoyed2Screen: MoodeoAnnoyed2Screen,
+  MoodeoAnnoyed1Screen: MoodeoAnnoyed1Screen,
   VaidateVideoScreen: VaidateVideoScreen,
   HomeScreen: HomeScreen
 });
