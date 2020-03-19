@@ -33,7 +33,7 @@ const HomeStack = createStackNavigator({
 });
 
 HomeStack.navigationOptions = {
-  tabBarLabel: 'Home',
+  tabBarLabel: 'Mood',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -75,7 +75,7 @@ const MoodeoStack = createStackNavigator({
 });
 
 MoodeoStack.navigationOptions = {
-  tabBarLabel: 'Moodeo',
+  tabBarLabel: 'Video',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}

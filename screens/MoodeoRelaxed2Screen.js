@@ -35,7 +35,7 @@ export default class MoodeoRelaxed2Screen extends React.Component {
 
   static navigationOptions = ({ navigation }) => {
     return {
-      title: 'Next Moodeo',
+      title: 'Next Video',
       headerTitleStyle: {
         justifyContent: 'center',
         fontWeight: 'bold',

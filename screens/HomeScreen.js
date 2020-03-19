@@ -20,7 +20,7 @@ export default class HomeScreen extends React.Component {
 
   static navigationOptions = ({ navigation }) => {
     return {
-      title: 'Home',
+      title: 'Mood',
       headerStyle: {
         backgroundColor: 'white',
       },

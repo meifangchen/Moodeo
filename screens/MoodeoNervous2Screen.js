@@ -35,7 +35,7 @@ export default class MoodeoNervous2Screen extends React.Component {
 
   static navigationOptions = ({ navigation }) => {
     return {
-      title: 'Moodeo',
+      title: 'Video',
       headerTitleStyle: {
         justifyContent: 'center',
         fontWeight: 'bold',
