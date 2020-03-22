@@ -138,11 +138,11 @@ const styles = StyleSheet.create({
     }),
     alignItems: 'center',
     backgroundColor: '#fbfbfb',
-    paddingVertical: 10,
+    paddingVertical: 20,
   },
   tabBarInfoText: {
     fontWeight: 'bold',
-    fontSize: 35,
+    fontSize: 39,
     paddingTop: 0,
     color: '#7d3f98',
     textAlign: 'center',
