@@ -80,7 +80,7 @@ class VaidateVideoScreen extends React.Component {
   render() {
     return (
       <ScrollView style={styles.container}>
-        <Text style={styles.text}>Does this video fit your current mood?</Text>
+        <Text style={styles.text}>Are you satified with this video based on your mood?</Text>
         <CheckBox
           title='Yes'
           textStyle={{fontSize: 25}}

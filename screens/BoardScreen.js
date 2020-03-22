@@ -90,6 +90,11 @@ class BoardScreen extends Component {
       <ScrollView style={styles.container}>
         <Card style={styles.cardContainer}>
           <View>
+            <Text style={styles.cardTextTop}>This page is for app researchers'use only </Text>
+        </View>
+        </Card>
+        <Card style={styles.cardContainer}>
+          <View>
             <Text style={styles.cardText}>Total validated videos: {this.state.totalRecord}</Text>
             <Text style={styles.cardText}>Valid videos: {this.state.numOfValidRecord}</Text>
             <Text style={styles.cardText}>Invalid videos: {this.state.numOfInvalidRecord}</Text>
@@ -131,6 +136,10 @@ const styles = StyleSheet.create({
   },
   cardText: {
     fontSize: 25,
+  },
+  cardTextTop: {
+    fontSize: 28,
+    color:'red',
   },
   item: {
     padding: 10,
