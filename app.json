@@ -1,9 +1,9 @@
 {
   "expo": {
-    "name": "Moodeo_Prototype2_final",
+    "name": "Moodeo_Prototype3_final",
     "slug": "prototype",
     "privacy": "public",
-    "sdkVersion": "33.0.0",
+    "sdkVersion": "34.0.0",
     "platforms": [
       "ios",
       "android"
