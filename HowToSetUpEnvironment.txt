@@ -1,0 +1,26 @@
+Tools required: 
+1.Visual Studio Code editor 
+2.Expo Client - help to open application in Expo client by scanning the QR code/sending the link via email, switch production/development mode and publish the app on expo server.
+3. Firebase
+
+Set up expo client:
+1. Download expo client app to your mobile phone
+2. Create an expo client account and sign in
+
+Set up Moodeo:
+Steps:
+1. Download Moodeo source code from github at https://github.com/meifangchen/Moodeo.git
+2. Open Moodeo project in Visual Studio Code editor
+3. Run "npm install" to download all the dependencis defined in the package json file. This action will generate a node_module folder with the installed modules.
+4. Run "npm start" to run the application
+5. In the Visual Studio Code terminal, copy the localhost link, such as http://localhost:19002 and past this link to the google browser.
+6. In this page, unitl tunnel is ready and pick "Tunnel" as connection mode.
+7. Click "Send link with email" and enter your phone number. Then system will send out a message to the cell phone of the number you just provide. Open the application follow the link attahced in the message. This will enable your to open the application via Expo client.
+
+Set up firebase:
+This application adopted firebase as database/backend. It also used firebase email authentication to manage user accounts.
+1. Register a firbase account and sign in.
+2. Create a new project in firebase 
+2. Config the Firebase.js with your corresponding firebase account info.
+
+
